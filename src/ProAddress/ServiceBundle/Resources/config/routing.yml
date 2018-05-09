@@ -1,0 +1,6 @@
+pa_service:
+    path:     /{cat}/{cp}
+    defaults: { _controller: ProAddressServiceBundle:Index:index, cat: all, cp: OO }
+    requirements:
+        cat:  \w{2,50}
+        cp: \w{2}

@@ -1,0 +1,4 @@
+services:
+#    pro_address_app.example:
+#        class: ProAddress\AppBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

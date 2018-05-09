@@ -1,0 +1,151 @@
+{% extends "ProAddressAppBundle::layout.html.twig" %}
+
+{% block title %}
+Accueil | {{ parent() }} découvrez en ligne, des services et contacts, des structures et addresses, des avis de recrutement...
+{% endblock %}
+
+{% block metadescription %}
+Services et contacts, annonces recrutements, structures et addresses en ligne : Hôtels, Supermarchés, Restaurants, Patisserie, Pharmacies... 
+{% endblock %}
+
+{% block bord %}
+	{% include "ProAddressAppBundle::bord.html.twig" %}
+{% endblock %}
+
+{% block content %}
+
+	{#<h5>
+		<div class="row one"><span class="glyphicon glyphicon-chevron-right"></span>Retrouver très rapidement l'addresse d'une structure</div>
+		<div class="row two"><span class="glyphicon glyphicon-chevron-right"></span>Localiser facilement un point de vente</div>
+		<div class="row three"><span class="glyphicon glyphicon-chevron-right"></span>Mettre en ligne l'addresse de sa structure <a href="#form">>></a></div>
+	</h5>#}
+	
+	<div class="row" id="content">
+		<div class="col-md-7">
+			<div class="carousel slide thumbnail">
+				<nav class="" id="carousel-bar">
+					<h3 class="text-center">
+							<span class="glyphicon glyphicon-star-empty "></span>
+							<span class="glyphicon glyphicon-star-empty "></span>
+							<span class="glyphicon glyphicon-star-empty "></span>
+                            {% filter upper %}Exclusivity{% endfilter %}
+							<span class="glyphicon glyphicon-star-empty "></span>
+							<span class="glyphicon glyphicon-star-empty "></span>
+							<span class="glyphicon glyphicon-star-empty "></span>
+					</h3>
+				</nav>
+				{% if imgslide is defined and imgslide is not empty %}
+					{% for line in imgslide %}
+						<ol class="carousel-indicators">
+							<li data-target="#carousel" data-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" {% endif %}></li>
+						</ol>
+					{% endfor %}
+
+					<div class="carousel-inner">
+					{% for line in imgslide %}
+						<div {{ loop.first? 'class="item active"': 'class="item"' }}>
+							<div class="slide-fg">
+								<h1>{{ line.image.legendetitre }}</h1>
+								<h4>{{ line.image.legendeslogan }}</h4>
+								<h5 class="col-xs-12">{{ line.image.legendedescription }}</h5>
+								<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ line.image.legendeaddresse }}</address>
+							</div>
+							<img alt="img{{ loop.index0 }}" src="{{ asset('assets/images/') }}{{ line.image.url }}"  width="100%" height="100%">
+							<h1 class="carousel-caption">{{ line.image.legende }}</h1>
+						</div>
+					{% endfor %}
+
+					{% else %}
+						<ol class="carousel-indicators">
+							<li data-target="#carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel" data-slide-to="1"></li>
+							<li data-target="#carousel" data-slide-to="2"></li>
+							<li data-target="#carousel" data-slide-to="3"></li>
+							<li data-target="#carousel" data-slide-to="4"></li>
+						</ol>
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="slide-fg">
+									<h1>Tout Service </h1>
+									<h4>Bésoins d'un service ? Ou êtes-vous Entrepreneur ? <a href="{#{ path('oservice') }#}" class="title-txt">Rejoyez vite notre espace Tout Service<span class="glyphicon glyphicon-chevron-right"></span></a></h4>
+									<h5 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Découvrez tous les services & contacts publiés par les entreprises</h5>
+									<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></address>
+								</div>
+								<img alt="img1" src="{{ asset('assets/images/defaultslide1') }}"  width="100%" height="100%">
+								{#<h1 class="carousel-caption"><a href="{{ path('oservice') }}" class="btn btn-danger">Page Services<span class="glyphicon glyphicon-chevron-right"></span></a></h1>#}
+							</div>
+
+							<div class="item">
+								<div class="slide-fg">
+									<h1>Espace Recrutement </h1>
+									<h4>Vous êtes employeur ou candidat, <a href="{#{ path('recru_recrutement') }#}" class="title-txt">rejoyez vite notre espace recrutement<span class="glyphicon glyphicon-chevron-right"></span></a></h4>
+									<h5 class="col-xs-12"></h5>
+									<address class="col-xs-12"></address>
+								</div>
+								<img alt="img1" src="{{ asset('assets/images/defaultslide2') }}"  width="100%" height="100%">
+								{#<h1 class="carousel-caption"><a href="{{ path('recru_recrutement') }}" class="btn btn-primary">Page recrutements<span class="glyphicon glyphicon-chevron-right"></span></a></h1>#}
+							</div>
+
+							<div class="item">
+								<div class="slide-fg">
+									<h1>Les Structures </h1>
+									<h4>Slogan</h4>
+									<h5 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Informations</h5>
+									<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12">addresses & contacts </address>
+								</div>
+								<img alt="img3" src="{{ asset('assets/images/defaultslide3') }}" width="100%" height="100%">
+								<h1 class="carousel-caption">Hôtel</h1>
+							</div>
+
+							<div class="item">
+								<div class="slide-fg">
+									<h1>Les Structures </h1>
+									<h4>Slogan</h4>
+									<h5 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Informations</h5>
+									<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12">addresses & contacts </address>
+								</div>
+								<img alt="img1" src="{{ asset('assets/images/defaultslide4') }}"  width="100%" height="100%">
+								<h1 class="carousel-caption">Supermarché</h1>
+							</div>
+
+							<div class="item">
+								<div class="slide-fg">
+									<h1>Les Structures </h1>
+									<h4>Slogan</h4>
+									<h5 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Informations</h5>
+									<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12">addresses & contacts </address>
+								</div>
+								<img alt="img2" src="{{ asset('assets/images/defaultslide5') }}" width="100%" height="100%">
+								<h1 class="carousel-caption">Pharmacie</h1>
+							</div>
+                        </div>
+
+				{% endif %}
+
+				<a class="left carousel-control" href="#carousel" data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel" data-slide="next">
+					<span class="icon-next"></span>
+				</a>
+			</div>
+		</div>
+        <div class="col-md-5" id="enregistrement">
+				<h3 class="three-title text-center">Publier une structure</h3>
+        </div>
+		<div class="well col-md-5 form">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">					
+						<h4 class="text-center" data-toggle="tooltip" title="Enrégistrement">Formulaire d'enrégistement</h4>
+					</div>
+				</div>
+				<div class="panel-body" id="form">
+					{% include "ProAddressAppBundle:App:structure.form.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

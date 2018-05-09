@@ -1,0 +1,49 @@
+{{ form_start(structureform) }}
+						<div class="row">
+								<span class="form_error">
+								    {{ form_errors(structureform.type) }}
+                                    {{ form_errors(structureform.enseigne) }}
+                                    {{ form_errors(structureform.ville) }}
+                                    {{ form_errors(structureform.adresse) }}
+                                    {{ form_errors(structureform.departement) }}
+                                    {{ form_errors(structureform.region) }}
+                                    {{ form_errors(structureform.tel) }}
+                                    {{ form_errors(structureform.email) }}
+                                    {#	{{ form_errors(structureform.logo.file) }} #}
+								</span>
+						  <table class="col-md-10 table table-striped" id="">
+							<tr><td>{{ form_label(structureform.type, 'Type : ') }}</td>
+								<td data-toggle="tooltip" title="Spécialisation. Par exemple: Pharmacie">{{ form_widget(structureform.type) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.pays, 'Pays : ') }}</td>
+								<td>{{ form_widget(structureform.pays) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.enseigne, 'Enseigne ou Nom : ') }}</td>
+								<td>{{ form_widget(structureform.enseigne) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.ville, 'Ville : ') }}</td>
+								<td>{{ form_widget(structureform.ville) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.adresse, 'Adresse : ') }}</td>
+								<td>{{ form_widget(structureform.adresse) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.departement, 'Département : ') }}</td>
+								<td>{{ form_widget(structureform.departement) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.region, 'Région : ') }}</td>
+								<td  data-toggle="tooltip" title="Nord, Sud ou Centre">{{ form_widget(structureform.region) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.tel, 'Téléphone : ') }}</td>
+								<td>{{ form_widget(structureform.tel) }}</td>
+							</tr>
+							<tr><td>{{ form_label(structureform.email, 'E-mail : ') }}</td>
+								<td>{{ form_widget(structureform.email) }}</td>
+							</tr>
+							{#<tr><td>{{ form_label(structureform.logo.file, 'Vous avez un logo/image ? ') }}</td>
+								<td>{{ form_widget(structureform.logo.file) }}</td>
+							</tr>#}	
+						</table>
+						{#{ form_rest(structureform) }#}
+						<br><button type="submit" class="btn btn-info pull-right"><span class="glyphicon glyphicon-ok-sign"></span> Envoyer</button>
+					</div>
+{{ form_end(structureform) }}

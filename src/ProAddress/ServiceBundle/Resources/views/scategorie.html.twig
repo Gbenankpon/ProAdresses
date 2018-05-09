@@ -1,0 +1,9 @@
+				{% if servicescat is defined and servicescat is not empty %}
+					<div class="well col-lg-12 text-center">
+							{% for scat in servicescat %}
+								<a href="{{ path('pa_service', {'cat': scat.nom }) }}">
+									{{ scat.nom|title }}
+								</a> {% if not loop.last %} | {% endif %} 
+							{% endfor %}
+					</div>
+				{% endif %}

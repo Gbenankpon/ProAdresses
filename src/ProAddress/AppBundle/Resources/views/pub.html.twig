@@ -1,0 +1,27 @@
+			<div class="pub col-xs-1 col-sm-1 col-sm-1 col-lg-1"><span class="relief pull-right">P<br>u<br>b</span></div>
+			<div class="carousel slide col-xs-11 col-sm-11 col-sm-11 col-lg-11">
+				<div class="carousel-inner">
+                    {% if imgpub is defined and imgpub is not empty %}
+                        {% for line in imgpub %}
+							<div {{ loop.first? 'class="item active"': 'class="item"' }} id="hotel">
+								<div class="slide-fg">
+									<h1>{{ line.image.legendetitre }}</h1>
+									<h4>{{ line.image.legendeslogan }}</h4>
+									<h5 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ line.image.legendedescription }}</h5>
+									<adress class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ line.image.legendeadresse }}</adress>
+								</div>
+								<img alt="img{{ loop.index0 }}" src="{{ asset('assets/images/') }}{{ line.image.url }}"  width="100%" height="100%">
+								<h1 class="carousel-caption">{{ line.image.legende }}</h1>
+							</div>
+                        {% endfor %}
+
+						{% else %}
+							<div class="item active">
+								<div class="pub-detail slide-fg" id="hack1">
+								</div>
+								<img alt="img" src="{{ asset('assets/images/defaultpub') }}" />
+								<h3 class="carousel-caption"></h3>
+							</div>
+					{% endif %}
+				</div>
+			</div>

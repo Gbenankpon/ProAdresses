@@ -1,0 +1,227 @@
+.sg div{
+padding-top: 5px !important;
+padding-bottom: 15px !important;
+}
+.sg div a{
+color: #48E !important;
+}
+.sg div a:hover{
+color: #468 !important;
+}
+.sg .div2{
+border-top: 3px solid #48E;
+}
+.sg .div3{
+border-top: 3px solid #E44;
+}
+.sg .div4{
+border-top: 3px solid #4E8;
+}
+#accueil-container .carousel img{
+width:100% !important;
+height: 300px !important;
+}
+.band-i{
+padding: 10px !important;
+background: #0ae;
+color:#fff;
+border-left: 5px solid #08c;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-o-border-radius: 3px;
+-ms-border-radius: 3px;
+border-radius: 3px;
+}
+#sidebar .sidebar-header {
+    padding: 0 !important;
+    margin : 0 !important;
+}
+.sidebar-banner{
+    text-align: ;center;
+    padding: 0 0 10px 0;
+}
+.sidebar-banner div{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 5px 0 10px !important;
+    text-align: left;
+}
+.sidebar-banner .sidebar-logo{
+    padding: 0px ;
+    height: 50px;
+    width: 50px;
+}
+.sidebar-logo img,
+#user-banner img,
+.profil-image img{
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}/* End sidebar */
+#index-slide img{
+    height: 400px ;
+}
+/* CONTENT */
+#content {
+    flex: 1;
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    min-width:;
+}
+.profil-image{
+padding: 0;
+height: 70px;
+width: 70px;
+text-align:center;
+margin: auto;
+}
+.profil-image img{
+width:100%;
+height:100%;
+border: 4 solid #444;
+}
+.usr-img{
+padding:0;
+height:40px;
+width:40px;
+display:inline-block;
+}
+.usr-img img{
+width:100%;
+height:100%;
+border: 2 solid #444;
+padding:0;
+}
+.panel-profil{
+border-top: 3px solid #379;
+padding-top: 15px ;
+}
+
+.profil-image{
+
+}
+    /* securité page */
+@media all and (min-width: 400px){
+    .security-container{
+    width: 380px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    }
+}
+@media all and (max-width: 400px){
+    .security-container{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    }
+}
+
+.security-container{
+	/*-webkit-box-shadow: 0px 0px 2px #111;
+	-moz-box-shadow: 0px 0px 2px #111;
+	-o-box-shadow: 0px 0px 2px #111;
+	-ms-box-shadow: 0px 0px 2px #111;
+	box-shadow: 0px 0px 2px #111;*/
+	
+	padding: 15px;
+	margin: 5px;
+	background-color: ;
+}
+.security-container>div[class*="panel"]{
+	-webkit-box-shadow: 0px 0px 2px #111 !important;
+	-moz-box-shadow: 0px 0px 2px #111 !important;
+	-o-box-shadow: 0px 0px 2px #111 !important;
+	-ms-box-shadow: 0px 0px 2px #111 !important;
+	box-shadow: 0px 0px 2px #111 !important;
+}
+.security-container input{
+display:block;
+}
+.security-container input[type="submit"]{
+margin-top: 5px;
+color: #BBB;
+}
+.security-container input[value="Login"]{
+background: #31708f;
+}
+.security-container input[value="Register"]{
+background: #2b542c;
+}
+.security-container input[value*="Reset"]{
+background: #a94442;
+}
+
+.FOSUB_form{
+	background: #888;
+}
+    
+.flash-success{
+	background-color: #3D3;
+	color: #fff;
+	padding: 10px;
+	-webkit-box-shadow: 2px 2px 2px #111 !important;
+	-moz-box-shadow: 2px 2px 2px #111 !important;
+	-o-box-shadow: 2px 2px 2px #111 !important;
+	-ms-box-shadow: 2px 2px 2px #111 !important;
+	box-shadow: 2px 2px 2px #111 !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+
+}
+.flash-warning{
+	background-color: #E86;
+	color: #fff;
+	padding: 10px;
+	-webkit-box-shadow: 2px 2px 2px #111 !important;
+	-moz-box-shadow: 2px 2px 2px #111 !important;
+	-o-box-shadow: 2px 2px 2px #111 !important;
+	-ms-box-shadow: 2px 2px 2px #111 !important;
+	box-shadow: 2px 2px 2px #111 !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+    /**Fin security**/
+
+/*article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: inline-block;
+}
+/*
+POLICE: font-family
+Arial ;
+Arial Black ;
+Comic Sans MS ;
+Courier New ;
+Georgia ;
+Impact ;
+Times New Roman ;
+Trebuchet MS ;
+Verdana.
+*/
+/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+*/

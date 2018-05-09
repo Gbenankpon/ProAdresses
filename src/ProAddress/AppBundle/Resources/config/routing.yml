@@ -1,0 +1,10 @@
+pa_app_accueil:
+    path:     /
+    defaults: { _controller: ProAddressAppBundle:App:index }
+
+pa_app_structure:
+    path: /structures/{cat}/{cp}
+    defaults: { _controller: ProAddressAppBundle:App:getStructure, cat: all, cp: OO }
+    requirements:
+        cat:  ^[a-z-]{2,50}
+        cp: \w{2}

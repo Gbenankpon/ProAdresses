@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recrutements list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Titre</th>
+                <th>Poste</th>
+                <th>Dossier</th>
+                <th>Lieudepot</th>
+                <th>Expiredate</th>
+                <th>Lieutravail</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Telcandidat</th>
+                <th>Structure</th>
+                <th>Eenvoie</th>
+                <th>Envoieemail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recrutement in recrutements %}
+            <tr>
+                <td><a href="{{ path('admin_recrutement_show', { 'id': recrutement.id }) }}">{{ recrutement.id }}</a></td>
+                <td>{% if recrutement.date %}{{ recrutement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ recrutement.titre }}</td>
+                <td>{{ recrutement.poste }}</td>
+                <td>{{ recrutement.dossier }}</td>
+                <td>{{ recrutement.lieudepot }}</td>
+                <td>{% if recrutement.expireDate %}{{ recrutement.expireDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ recrutement.lieuTravail }}</td>
+                <td>{{ recrutement.email }}</td>
+                <td>{{ recrutement.tel }}</td>
+                <td>{{ recrutement.telCandidat }}</td>
+                <td>{{ recrutement.structure }}</td>
+                <td>{{ recrutement.eenvoie }}</td>
+                <td>{{ recrutement.envoieEmail }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_recrutement_show', { 'id': recrutement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_recrutement_edit', { 'id': recrutement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_recrutement_new') }}">Create a new recrutement</a>
+        </li>
+    </ul>
+{% endblock %}

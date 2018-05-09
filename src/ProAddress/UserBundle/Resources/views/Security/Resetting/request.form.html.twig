@@ -1,0 +1,39 @@
+<form action="{{ path('fos_user_resetting_send_email') }}" method="post">
+								    <fieldset>
+										<label class="block clearfix">
+											<span class="block input-icon input-icon-right">
+												<input type="email" class="form-control" placeholder="Email" />												<i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+											</span>
+										</label>
+										<div class="clearfix">
+											<button type="submit" class="width-35 pull-right btn btn-sm btn-danger">
+												<span class="bigger-110">Envoyer</span>
+											</button>
+										</div>
+									</fieldset>
+</form>
+<form action="{{ path('fos_user_resetting_request') }}" method="POST">
+	<fieldset>
+		<label class="block clearfix">
+			<span class="block input-icon input-icon-right">
+				<input type="email" class="form-control" placeholder="Email" />												<i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+			</span>
+		</label>
+		<div class="clearfix">
+		    <button type="submit" class="width-35 pull-right btn btn-sm btn-danger">
+		        <span class="bigger-110">{{ 'Réinitialiser le mot de passe'|trans({},'FOSUserBundle') }}</span>
+		    </button>
+		</div>
+	</fieldset>
+</form>
+{#
+<form action="/net2all/web/app_dev.php/resetting/send-email" method="POST" class="fos_user_resetting_request">
+    <div>
+        <label for="username">Nom d&#039;utilisateur ou adresse e-mail</label>
+        <input type="text" id="username" name="username" required="required" />
+    </div>
+    <div>
+        <input type="submit" value="Réinitialiser le mot de passe" />
+    </div>
+</form>
+#}

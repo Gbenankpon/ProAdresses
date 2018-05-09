@@ -1,0 +1,28 @@
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		<span class="pull-right" id="user-container">
+			<li class="dropdown">
+				<a rel="nofollow" href="#" class="small" data-toggle="dropdown"><span class="glyphicon glyphicon-user text-warning"></span> {{ app.user.username }}
+				    {% if is_granted("ROLE_ADMIN") %}<span class="glyphicon glyphicon-star text-warning"></span>{% endif %}
+				</a>
+				<ul class="pull-left dropdown-menu">
+					<li><a rel="nofollow" href="{{ path('fos_user_profile_show') }}">Profile</a></li>
+					<li><a rel="nofollow" href="{{ path('fos_user_profile_edit') }}">Éditer Profile</a></li>
+					{#% if is_granted("ROLE_ADMIN") %}
+						<li><a class="small" rel="nofollow" href="{{ path('admin_stat') }}">Stats</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_temporary') }}">Temporaires</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_structure') }}">Structures</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_image') }}">Images</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_lczuser') }}">Users</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_abonnee') }}">Abonnés</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_recrutement') }}">Recrutements</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_service') }}">Services</a></li>
+                        <li><a rel="nofollow" href="{{ path('admin_message') }}">Messages</a></li>
+					{% endif %#}
+					<li><a rel="nofollow" href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+				</ul>
+			</li>
+			{#<span class="" data-toggle="tooltip" title="Se déconnecter"><a rel="nofollow" href="{{ path('fos_user_security_logout') }}" title="déconneter" to><span class="glyphicon glyphicon-log-out"></span></a></span>#}
+		</span>
+    {% else %}
+    <a rel="nofollow" href="{{ path('fos_user_security_login') }}" class="pull-right">S'identifier</a>
+    {% endif %}

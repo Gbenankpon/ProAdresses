@@ -1,0 +1,62 @@
+    <div class="col-sm-5">
+        <ul class="navbar navbar-nav btn-group list-inline list-unstyled fa-xs" id="navbar-list">
+            <li><a class="" href="{{ path('pa_app_accueil') }}">ACCUEIL</a></li>            
+            <li><a href="{{ path('pa_app_accueil') }}#enregistrement" class="" id="accueil">STRUCTURES</a></li>
+            <li><a href="{{ path('pa_recrutement') }}" class="">RECRUTEMENTS</a></li>
+			<li><a href="{#{ path('') }#}" class="">CONTACT</a></li>
+        </ul>
+    </div>
+	{% if app.request.pathInfo matches '#^/[a-z]{2}(/structures/[a-zA-Z]+)|(/services(/[a-zA-Z])*)|(/recrutements)#' %}
+	<div class="col-sm-2 dropdown text-center">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">PAYS <span class="caret"></span></a>
+		{% if app.request.pathInfo matches '#^/[a-z]{2}(/structure/)[a-zA-Z]+#' and data is not empty %}
+				<ul class="dropdown-menu list-group">
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'bj','type':data[0].type}) }}">Bénin</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'bu','type':data[0].type}) }}">Burkina</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ci','type':data[0].type}) }}">Côte d'Ivoire</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ga','type':data[0].type}) }}">Gabon</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ma','type':data[0].type}) }}">Mali</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ni','type':data[0].type}) }}">Niger</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'se','type':data[0].type}) }}">Sénégal</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'tg','type':data[0].type}) }}">Togo</a></li>
+				</ul>
+		{% endif %}
+		{% if app.request.pathInfo matches '#^/[a-z]{2}(/service)(/[a-zA-Z])*#' %}
+				<ul class="dropdown-menu list-group">
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'bj'}) }}">Bénin</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'bu'}) }}">Burkina</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ci'}) }}">Côte d'Ivoire</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ga'}) }}">Gabon</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ma'}) }}">Mali</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ni'}) }}">Niger</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'se'}) }}">Sénégal</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'tg'}) }}">Togo</a></li>
+				</ul>
+		{% endif %}
+		{% if app.request.pathInfo matches '#^/[a-z]{2}(/recrutement)(/\\w)*#' %}
+				<ul class="dropdown-menu list-group">
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'bj'}) }}">Bénin</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'bu'}) }}">Burkina</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ci'}) }}">Côte d'Ivoire</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ga'}) }}">Gabon</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ma'}) }}">Mali</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'ni'}) }}">Niger</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'se'}) }}">Sénégal</a></li>
+					<li><a class="list-group-item" href="{{ path(app.request.attributes.get('_route'), {'pays':'tg'}) }}">Togo</a></li>
+				</ul>
+		{% endif %}
+	</div>
+	{% endif %}
+		
+    <div style="" class="col-sm-3">
+        <form class="fa-sm" method="post" action="{#{ path('lcz_search', {'page': 'search'}) }#}" idd="navbar-form">
+            <div class="form-group has-feedback">
+                <label class="sr-only col-sm-4 control-label" for="recherche">Recherche</label>
+                <span class="glyphicon glyphicon-search form-control-feedback fa-sm"></span>
+                <input class="input-sm form-control fa-md" type="text" placeholder="Rechercher une structure" name="recherche" id="recherche" >
+            </div>
+        </form>
+    </div>
+	<div class="col-sm-2 pull-right" id="button-nav">	
+	{% include "ProAddressAppBundle::userbar.html.twig" %}
+	</div>

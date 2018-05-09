@@ -1,0 +1,5 @@
+pa_recrutement:
+    path:     /{cp}
+    defaults: { _controller: ProAddressRecrutementBundle:Index:index, cp: OO }
+    requirements:
+        cp: \w{2}

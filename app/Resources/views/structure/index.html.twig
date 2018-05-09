@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Structures list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Enseigne</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Departement</th>
+                <th>Region</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>Online</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for structure in structures %}
+            <tr>
+                <td><a href="{{ path('admin_structure_show', { 'id': structure.id }) }}">{{ structure.id }}</a></td>
+                <td>{% if structure.date %}{{ structure.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ structure.type }}</td>
+                <td>{{ structure.enseigne }}</td>
+                <td>{{ structure.adresse }}</td>
+                <td>{{ structure.ville }}</td>
+                <td>{{ structure.departement }}</td>
+                <td>{{ structure.region }}</td>
+                <td>{{ structure.tel }}</td>
+                <td>{{ structure.email }}</td>
+                <td>{% if structure.online %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_structure_show', { 'id': structure.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_structure_edit', { 'id': structure.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_structure_new') }}">Create a new structure</a>
+        </li>
+    </ul>
+{% endblock %}

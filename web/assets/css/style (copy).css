@@ -1,0 +1,68 @@
+.flash-success{
+	background-color: #3D3;
+	color: #fff;
+	padding: 10px;
+	-webkit-box-shadow: 2px 2px 2px #111 !important;
+	-moz-box-shadow: 2px 2px 2px #111 !important;
+	-o-box-shadow: 2px 2px 2px #111 !important;
+	-ms-box-shadow: 2px 2px 2px #111 !important;
+	box-shadow: 2px 2px 2px #111 !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+
+}
+.flash-warning{
+	background-color: #E86;
+	color: #fff;
+	padding: 10px;
+	-webkit-box-shadow: 2px 2px 2px #111 !important;
+	-moz-box-shadow: 2px 2px 2px #111 !important;
+	-o-box-shadow: 2px 2px 2px #111 !important;
+	-ms-box-shadow: 2px 2px 2px #111 !important;
+	box-shadow: 2px 2px 2px #111 !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+    /**Fin security**/
+
+/*article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: inline-block;
+}
+/*
+POLICE: font-family
+Arial ;
+Arial Black ;
+Comic Sans MS ;
+Courier New ;
+Georgia ;
+Impact ;
+Times New Roman ;
+Trebuchet MS ;
+Verdana.
+*/
+/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+*/

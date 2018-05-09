@@ -1,0 +1,30 @@
+<form action="{{ path('fos_user_security_check') }}" method="post">
+{% if csrf_token is defined %}
+	<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+{% endif %}
+    <fieldset>
+        <label class="block clearfix">
+		    <span class="block input-icon input-icon-right">
+			    <input type="text" id="username" name="_username" value="{% if last_username is defined %}{{ last_username }}{% endif %}"	required="required" class="form-control" placeholder="nom d'utilisateur" />
+			    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+			</span>
+		</label>
+        <label class="block clearfix">
+			<span class="block input-icon input-icon-right">
+				<input type="password" id="password" name="_password" required="required" class="form-control" placeholder="mot de passe" />
+				<i class="glyphicon glyphicon-lock form-control-feedback"></i>
+		    </span>
+	    </label>
+		<label class="block clearfix">Combien font 3+3?
+			<span class="block input-icon input-icon-right">
+			    <input type="text" id="password" name=""	required="" class="form-control" placeholder="" />
+			</span>
+		</label>
+        <div class="space-6"></div>
+		<button type="submit" id="_submit" name="_submit" class="width-100 pull-right btn btn-sm btn-success">
+			<span class="bigger-110">Se connecter</span>
+		</button>
+		{#<input type="submit" id="_submit" name="_submit" value="Connexion" />#}
+        <div class="space-4"></div>
+    </fieldset>
+</form>

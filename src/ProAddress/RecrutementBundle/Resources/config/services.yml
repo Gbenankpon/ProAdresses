@@ -1,0 +1,4 @@
+services:
+#    pro_address_recrutement.example:
+#        class: ProAddress\RecrutementBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

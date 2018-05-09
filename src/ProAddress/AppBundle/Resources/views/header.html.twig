@@ -1,0 +1,55 @@
+<header class="page-header" id="pageHeader">
+	<div class="row" id="banniere">
+		<div class="col-xm-12 col-sm-6 col-md-6 col-lg-6" id="slogan">
+			<div id="slog-titre">
+				<a href="{{ path('pa_app_accueil') }}">
+					<span class="B">P</span>
+					<span class="E">R</span>
+					<span class="E">O</span>
+					<span class="L">A</span>
+					<span class="E">D</span>
+					<span class="E">D</span>
+					<span class="C">R</span>
+					<span class="A">E</span>
+					<span class="E">S</span>
+					<span class="E">S</span>
+					{#<span class="Z">Z</span>
+					<span class="E">E</span>#}
+					{#<span class="E">A</span>
+					<span class="E">T</span>
+					<span class="E">I</span>
+					<span class="E">O</span>
+					<span class="E">N</span>#}
+					
+				</a>{#<p id="pv">Le site de localisation</p>#}
+			</div>
+			<div id="slog-info" class="btn-group">
+			    <marquee class="header-marquee col-xs-11 col-sm-11 col-md-11 col-lg-11 btn text-primary">
+			        Donner plus de visibilité à votre entreprise ou votre service <span class="glyphicon glyphicon-info-sign"></span> Espace recrutement <span class="glyphicon glyphicon-info-sign"></span> Services & Contacts <span class="glyphicon glyphicon-info-sign"></span> Structures & Adresses géolocalisables <span class="glyphicon glyphicon-hand-right"></span>
+			    </marquee>
+	            <a rel="nofollow" class="col-xs-1 col-sm-1 col-md-1 col-lg-1 btn" href="{{ path('pa_app_accueil') }}#enregistrement">
+	                <span class="glyphicon glyphicon-chevron-right"></span>
+	            </a>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="pub">
+            {% include "ProAddressAppBundle::pub.html.twig" %}
+		</div>
+	</div>{# FIN BANNI?RE #}
+	
+	<div id="navbar" class="row fa-sm">
+		<div class="navbar navbar-default col-lg-12" id="navbarr" role="navigator">
+			{% include "ProAddressAppBundle::navbar.html.twig" %}
+		</div>
+		{% for message in app.session.flashbag.get('success') %}
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 flash-success text-center">
+			<p class="title-txt"><span class="glyphicon glyphicon-info-sign pull-left "></span>{{ message }}</p>
+		</div>
+		{% endfor %}
+		{% for message in app.session.flashbag.get('warning') %}
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 flash-warning text-center">
+			<p class="title-txt"><span class="glyphicon glyphicon-info-sign pull-left "></span>{{ message }}</p>
+		</div>
+		{% endfor %}
+	</div>
+</header>
