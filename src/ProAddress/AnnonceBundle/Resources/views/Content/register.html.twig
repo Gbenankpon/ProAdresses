@@ -1,0 +1,37 @@
+{#{{ form_start(annonceform) }}
+    {{ form_widget(annonceform) }}
+    <br><button type="submit" class="btn btn-info pull-right"><span class="glyphicon glyphicon-ok-sign"></span> Envoyer</button>
+{{ form_end(annonceform) }}#}
+
+<div class="text-center">
+    <h3 class="color-primary three-title">Publier une annonce</h3>
+    {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <p class="text-center"><a class="text-warning" href="{{ path('fos_user_security_login') }}">Se connecter  <span class="glyphicon glyphicon-chevron-right"></span> </a></p>
+    {% endif %}
+</div>
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+{{ form_start(annonceform) }}
+    <div class="panel panel-default color-primary">
+        <div class="panel-heading text-center">
+            <div class="panel-title">
+                <h5 class="color-primary three-title">Formmulaire d'enregistrement</h5>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <tr><td>{{ form_label(annonceform.titre) }}</td><td>{{ form_widget(annonceform.titre) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.prix) }}</td><td>{{ form_widget(annonceform.prix) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.acategorie) }}</td><td>{{ form_widget(annonceform.acategorie) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.pays) }}</td><td>{{ form_widget(annonceform.pays) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.detail) }}</td><td>{{ form_widget(annonceform.detail) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.contact) }}</td><td>{{ form_widget(annonceform.contact) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.expiration) }}</td><td>{{ form_widget(annonceform.expiration) }}</td></tr>
+            </table>
+            {{ form_rest(annonceform) }}
+        </div>
+        <div class="panel-footer">
+            <input type="submit" class="btn btn-info form-control" value="Publier" />
+        </div>
+    </div>
+{{ form_end(annonceform) }}
+{% endif %}

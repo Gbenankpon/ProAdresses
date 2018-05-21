@@ -1,0 +1,9 @@
+				{% if annoncescat is defined and annoncescat is not empty %}
+					<div class="well col-lg-12 text-center">
+							{% for acat in annoncescat %}
+								<a href="{{ path('pa_annonce', {'cat': acat.nom }) }}">
+									{{ acat.nom|title }}
+								</a> {% if not loop.last %} | {% endif %} 
+							{% endfor %}
+					</div>
+				{% endif %}

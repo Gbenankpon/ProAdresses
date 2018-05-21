@@ -2,11 +2,10 @@
 
 namespace ProAddress\AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class StructureType extends AbstractType
 {
@@ -16,19 +15,23 @@ class StructureType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type')
+            //->add('date')
             ->add('enseigne')
-            ->add('pays', EntityType::class, array(
-                'class' => 'ProAddressAppBundle:Pays',
-                'choice_label'=>'nom'
-                )
-            )
             ->add('adresse')
             ->add('ville')
             ->add('departement')
             ->add('region')
             ->add('tel')
-            ->add('email');
+            ->add('email')
+            //->add('online')
+            ->add('pays', EntityType::class, array(
+                'class'=>'ProAddressAppBundle:Pays',
+                'choice_label'=>'nom')
+            )
+            ->add('categorie', EntityType::class, array(
+                'class'=>'ProAddressAppBundle:Categorie',
+                'choice_label'=>'nom')
+            );
     }/**
      * {@inheritdoc}
      */

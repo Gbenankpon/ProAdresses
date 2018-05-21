@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Services list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Entreprise</th>
+                <th>Specialite</th>
+                <th>Contact</th>
+                <th>Detail</th>
+                <th>Nomrespo</th>
+                <th>Date</th>
+                <th>Online</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <td><a href="{{ path('admin_service_show', { 'id': service.id }) }}">{{ service.id }}</a></td>
+                <td>{{ service.entreprise }}</td>
+                <td>{{ service.specialite }}</td>
+                <td>{{ service.contact }}</td>
+                <td>{{ service.detail }}</td>
+                <td>{{ service.nomrespo }}</td>
+                <td>{% if service.date %}{{ service.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if service.online %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_service_show', { 'id': service.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_service_edit', { 'id': service.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_service_new') }}">Create a new service</a>
+        </li>
+    </ul>
+{% endblock %}

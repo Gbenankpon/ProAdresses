@@ -16,14 +16,13 @@ class Service
 {
 
     /**
-     * @ORM\ManyToMany(targetEntity="ProAddress\ServiceBundle\Entity\SCategorie", inversedBy="structures", cascade={"persist"})
-     * @ORM\JoinColumn(name="scategorie_id", referencedColumnName="id")
+     * @ORM\ManyToMany(targetEntity="ProAddress\ServiceBundle\Entity\SCategorie", cascade={"persist"})
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=false)
      */
     private $scategories;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Pays", inversedBy="pays", cascade={"persist"})
-     * @ORM\JoinColumn(name="pays_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Pays", inversedBy="services", cascade={"persist"})
      */
     private $pays;
 
@@ -67,7 +66,7 @@ class Service
     /**
      * @var string
      *
-     * @ORM\Column(name="nomrespo", type="string", length=255)
+     * @ORM\Column(name="nomrespo", type="string", length=255, nullable=true)
      */
     private $nomrespo;
 
@@ -81,7 +80,7 @@ class Service
     /**
      * @var bool
      *
-     * @ORM\Column(name="online", type="boolean")
+     * @ORM\Column(name="online", type="boolean", nullable=true)
      */
     private $online;
 
@@ -295,36 +294,36 @@ class Service
     }
 
     /**
-     * Add category
+     * Add scategory
      *
-     * @param \ProAddress\ServiceBundle\Entity\Categorie $category
+     * @param \ProAddress\ServiceBundle\Entity\SCategorie $scategory
      *
      * @return Service
      */
-    public function addCategory(\ProAddress\ServiceBundle\Entity\Categorie $category)
+    public function addScategory(\ProAddress\ServiceBundle\Entity\SCategorie $scategory)
     {
-        $this->categories[] = $category;
+        $this->scategories[] = $scategory;
 
         return $this;
     }
 
     /**
-     * Remove category
+     * Remove scategory
      *
-     * @param \ProAddress\ServiceBundle\Entity\Categorie $category
+     * @param \ProAddress\ServiceBundle\Entity\SCategorie $scategory
      */
-    public function removeCategory(\ProAddress\ServiceBundle\Entity\Categorie $category)
+    public function removeScategory(\ProAddress\ServiceBundle\Entity\SCategorie $scategory)
     {
-        $this->categories->removeElement($category);
+        $this->scategories->removeElement($scategory);
     }
 
     /**
-     * Get categories
+     * Get scategories
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCategories()
+    public function getScategories()
     {
-        return $this->categories;
+        return $this->scategories;
     }
 }

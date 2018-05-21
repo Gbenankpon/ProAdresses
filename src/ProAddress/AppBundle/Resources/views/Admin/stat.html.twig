@@ -1,0 +1,19 @@
+{% extends "ProAddressAppBundle::layout.html.twig" %}
+{% block title %}
+    Admin-Statistiques-{{ parent() }}
+{% endblock %}
+{% block content %}
+        <div class="row">
+            <p>Nombre de pages totale visitées: 
+                <span class="badge">{{ visitetotale }}</span>
+            </p>
+            <p>Nombre de pages visitées aujourd'hui: 
+                <span class="badge">{{ visitejour }}</span>
+            </p>
+            <p>
+            <p>Visite moyenne par jour: 
+                <span class="badge">{{ visitemoy }}</span>
+            </p>
+            
+        </div>
+    {% endblock %}

@@ -1,0 +1,41 @@
+{% extends "ProAddressAnnonceBundle::layout.html.twig" %}
+
+{% block title %}
+{{ parent() }}
+{% endblock %}
+
+{% block metadescription %}{% endblock %}
+
+{% block after_header %}
+	<div class="jumbotron navbar-inverse">
+		<div class="container">
+            {{ render(controller('ProAddressAnnonceBundle:Index:getACategorie')) }}
+		</div>
+	</div>
+{% endblock %}
+
+{% block data %}
+    {% for line in annonces %}
+        <div class="tb-info bg-dfault-hover bg-success col-md-12 text-left">
+            <h6 class="pull-right bg-primary">Annonce</h6>
+            <h3 class="h-band bg-primary title-txt">{{ line.titre }} ({{ line.pays.nom }}) - {{ line.expiration is empty ? line.prix : 'Expire le: '~line.expiration|date }}</h3>
+            {#<h5 class="text-info title-txt-hover">Ville: {{ line.ville }}</h5>#}
+            <h6 class="text-info title-txt-hover"> {{ line.detail }}</h6>
+            <h5 class="title-txt-hover text-primary">Contacts : {{ line.contact }}</h5>
+            <h6 class="text-info title-txt-hover relief">Catégories: {{ line.acategorie.nom }}</h6>
+            <br>
+        </div><hr>
+    {% endfor %}
+    <div class="pagination">
+        <ul class="list-inline">
+            {# On utilise la fonction range(a, b) qui crée un tableau de
+            valeurs entre a et b #}
+            {% for p in range(1, nbrPage) %}
+                <li{% if p == page %} class="active"{% endif %}>
+                    <a href="{{ path(app.request.attributes.get('_route'), {'cat':cat, 'page': p }) }}">{{ p }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+{% block right %}{% include "ProAddressAnnonceBundle:Content:register.html.twig" %}{% endblock %}

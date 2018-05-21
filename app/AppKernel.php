@@ -27,7 +27,7 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),// End Sonata,
             new ProAddress\UserBundle\ProAddressUserBundle(),
             new ProAddress\ServiceBundle\ProAddressServiceBundle(),
-            new ProAddress\RecrutementBundle\ProAddressRecrutementBundle(),
+            new ProAddress\AnnonceBundle\ProAddressAnnonceBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

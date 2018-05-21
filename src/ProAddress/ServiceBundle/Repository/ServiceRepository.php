@@ -2,6 +2,8 @@
 
 namespace ProAddress\ServiceBundle\Repository;
 
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
 /**
  * ServiceRepository
  *
@@ -10,4 +12,60 @@ namespace ProAddress\ServiceBundle\Repository;
  */
 class ServiceRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByCatCp($cat,$cp,$page){
+        if ($page < 1) {
+            throw new \InvalidArgumentException('L\'argument $page ne peut
+être inférieur à 1 (valeur : "'.$page.'").');
+        }
+
+        $ar = array($cat);
+        if($cp == 'oo'){
+            $qb = $this->createQueryBuilder('s');
+            $qb ->join('s.scategories', 'c')
+                ->where($qb->expr()->in('c.nom', $ar))
+                ->getQuery();
+            $qb ->setFirstResult(($page-1) * 10)
+                ->setMaxResults(10);
+            return new Paginator($qb);
+        }
+        if ($cat === "all"){
+            $qb = $this->createQueryBuilder('s');
+            $qb ->join('s.pays','p')
+                ->where('p.code= :cp')
+                    ->setParameter('cp',$cp)
+                ->getQuery();
+            $qb ->setFirstResult(($page-1) * 10)
+                ->setMaxResults(10);
+            return new Paginator($qb);
+        }
+
+        $qb = $this->createQueryBuilder('s');
+        $qb ->join('s.scategories', 'c')
+            ->join('s.pays','p')
+            ->where($qb->expr()->in('c.nom', $ar))
+                //->setParameter('cat',$cat)
+            ->andWhere('p.code= :cp')
+                ->setParameter('cp',$cp)
+            ->getQuery();
+        $qb ->setFirstResult(($page-1) * 10)
+            ->setMaxResults(10);
+        return new Paginator($qb);
+    }
 }
+
+/*public function fidByCatCp($cat,$cp){
+
+    $ar = array($cat);
+    $qb = $this->createQueryBuilder('s');
+    $qb ->join('s.scategories', 'c')
+        ->join('s.pays','p')
+        ->where($qb->expr()->in('c.nom', $ar))
+        //->where('c.nom= :cat')
+            //->setParameter('cat',$cat)
+        ->andWhere('p.code= :cp')
+            ->setParameter('cp',$cp)
+        ->orderBy('s.date', 'desc');
+
+    return $qb->getQuery()
+        ->getResult();
+}*/

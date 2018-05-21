@@ -39,6 +39,8 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         admin_skin: skin-black
+        twig_pays: {'benin':'bj','burkina faso':'bf','cote divoire':'ci','guinee bissau':'gw','mali':'ml','niger':'ng','senegal':'sn','togo':'tg'}
+        twig_sitename: ProAddress
 
 
 # Doctrine Configuration

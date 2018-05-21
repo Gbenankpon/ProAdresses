@@ -1,0 +1,37 @@
+{#{{ form_start(serviceform) }}
+    {{ form_widget(serviceform) }}
+    <br><button type="submit" class="btn btn-info pull-right"><span class="glyphicon glyphicon-ok-sign"></span> Envoyer</button>
+{{ form_end(serviceform) }}#}
+
+<div class="text-center">
+    <h3 class="color-primary three-title">Publier un service</h3>
+    {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <p class="text-center"><a class="text-warning" href="{{ path('fos_user_security_login') }}">Se connecter  <span class="glyphicon glyphicon-chevron-right"></span> </a></p>
+    {% endif %}
+</div>
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+{{ form_start(serviceform) }}
+    <div class="panel panel-default color-primary">
+        <div class="panel-heading text-center">
+            <div class="panel-title">
+                <h5 class="color-primary three-title">Formmulaire d'enregistrement</h5>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <tr><td>{{ form_label(serviceform.entreprise) }}</td><td>{{ form_widget(serviceform.entreprise) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.specialite) }}</td><td>{{ form_widget(serviceform.specialite) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.pays) }}</td><td>{{ form_widget(serviceform.pays) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.contact) }}</td><td>{{ form_widget(serviceform.contact) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.detail) }}</td><td>{{ form_widget(serviceform.detail) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.nomrespo) }}</td><td>{{ form_widget(serviceform.nomrespo) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.scategories) }}</td><td>{{ form_widget(serviceform.scategories) }}</td></tr>
+            </table>
+            {{ form_rest(serviceform) }}
+        </div>
+        <div class="panel-footer">
+            <input type="submit" class="btn btn-info form-control" value="Publier" />
+        </div>
+    </div>
+{{ form_end(serviceform) }}
+        {% endif %}

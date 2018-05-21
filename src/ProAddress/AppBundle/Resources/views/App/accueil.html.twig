@@ -8,19 +8,18 @@ Accueil | {{ parent() }} découvrez en ligne, des services et contacts, des stru
 Services et contacts, annonces recrutements, structures et addresses en ligne : Hôtels, Supermarchés, Restaurants, Patisserie, Pharmacies... 
 {% endblock %}
 
-{% block bord %}
-	{% include "ProAddressAppBundle::bord.html.twig" %}
+{% block after_header %}
+	<div class="jumbotron navbar-inverse">
+		<div class="container">
+			<div id="navbord" iid="nav-str" class="col-lg-12 text-center">
+				{{ render(controller('ProAddressAppBundle:App:getCategorie')) }}
+			</div>
+			{{ render(controller('ProAddressServiceBundle:Index:getSCategorie')) }}
+		</div>
+	</div>
 {% endblock %}
 
 {% block content %}
-
-	{#<h5>
-		<div class="row one"><span class="glyphicon glyphicon-chevron-right"></span>Retrouver très rapidement l'addresse d'une structure</div>
-		<div class="row two"><span class="glyphicon glyphicon-chevron-right"></span>Localiser facilement un point de vente</div>
-		<div class="row three"><span class="glyphicon glyphicon-chevron-right"></span>Mettre en ligne l'addresse de sa structure <a href="#form">>></a></div>
-	</h5>#}
-	
-	<div class="row" id="content">
 		<div class="col-md-7">
 			<div class="carousel slide thumbnail">
 				<nav class="" id="carousel-bar">
@@ -73,7 +72,7 @@ Services et contacts, annonces recrutements, structures et addresses en ligne : 
 									<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></address>
 								</div>
 								<img alt="img1" src="{{ asset('assets/images/defaultslide1') }}"  width="100%" height="100%">
-								{#<h1 class="carousel-caption"><a href="{{ path('oservice') }}" class="btn btn-danger">Page Services<span class="glyphicon glyphicon-chevron-right"></span></a></h1>#}
+								<h1 class="carousel-caption"><a href="{{ path('pa_service') }}" class="btn btn-danger">Page Services<span class="glyphicon glyphicon-chevron-right"></span></a></h1>
 							</div>
 
 							<div class="item">
@@ -84,7 +83,7 @@ Services et contacts, annonces recrutements, structures et addresses en ligne : 
 									<address class="col-xs-12"></address>
 								</div>
 								<img alt="img1" src="{{ asset('assets/images/defaultslide2') }}"  width="100%" height="100%">
-								{#<h1 class="carousel-caption"><a href="{{ path('recru_recrutement') }}" class="btn btn-primary">Page recrutements<span class="glyphicon glyphicon-chevron-right"></span></a></h1>#}
+								<h1 class="carousel-caption"><a href="{{ path('pa_annonce', {'cat': 'recrutement'}) }}" class="btn btn-primary">Page recrutements<span class="glyphicon glyphicon-chevron-right"></span></a></h1>
 							</div>
 
 							<div class="item">
@@ -132,20 +131,23 @@ Services et contacts, annonces recrutements, structures et addresses en ligne : 
 			</div>
 		</div>
         <div class="col-md-5" id="enregistrement">
-				<h3 class="three-title text-center">Publier une structure</h3>
+            <h3 class="three-title text-center">Publier une structure</h3>
         </div>
 		<div class="well col-md-5 form">
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<div class="panel-title">					
 						<h4 class="text-center" data-toggle="tooltip" title="Enrégistrement">Formulaire d'enrégistement</h4>
+                        {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <p class="text-center"><a class="text-warning" href="{{ path('fos_user_security_login') }}">Se connecter  <span class="glyphicon glyphicon-chevron-right"></span> </a></p>
+                        {% endif %}
 					</div>
 				</div>
+				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 				<div class="panel-body" id="form">
 					{% include "ProAddressAppBundle:App:structure.form.html.twig" %}
 				</div>
+				{% endif %}
 			</div>
 		</div>
-	</div>
-
 {% endblock %}

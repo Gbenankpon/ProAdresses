@@ -1,0 +1,31 @@
+{% extends "ProAddressAppBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ parent()~' | Contact' }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="panel panel-default text-info">
+                <div class="panel-heading">
+                    <div class="panel-title text-info text-center "><h3>ECRIVEZ-NOUS</h3></div>
+                </div>
+                {{ form_start(messageform) }}
+                    <div class="panel-body">
+                        <table class="col-xs-10 col-sm-10 col-md-10 col-lg-10 table table-striped">
+                            <tr><td><span class="pull-right">{{ form_label(messageform.prenom, 'Prenom : ') }}</span></td><td>{{ form_widget(messageform.prenom) }}</td></tr>
+                            <tr><td><span class="pull-right">{{ form_label(messageform.nom, 'Votre nom (obligatoire) : ') }}</span></td><td>{{ form_widget(messageform.nom) }}</td></tr>
+                            <tr><td><span class="pull-right">{{ form_label(messageform.courriel, 'Votre adresse de messagerie (obligatoie) : ') }}</span></td><td>{{ form_widget(messageform.courriel) }}</td></tr>
+                            <tr><td><span class="pull-right">{{ form_label(messageform.message, 'Votre message : ') }}</span></td><td>{{ form_widget(messageform.message) }}</td></tr>
+                            {{ form_rest(messageform) }}
+                        </table>
+                        <div class="panel-footer">
+                            <input type="submit" class="form-control btn btn-info " value="Envoyer" />
+                        </div>
+                {{ form_end(messageform) }}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

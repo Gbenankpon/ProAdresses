@@ -1,10 +1,24 @@
 pa_app_accueil:
     path:     /
-    defaults: { _controller: ProAddressAppBundle:App:index }
+    defaults: { _controller: ProAddressAppBundle:App:accueil }
 
 pa_app_structure:
-    path: /structures/{cat}/{cp}
-    defaults: { _controller: ProAddressAppBundle:App:getStructure, cat: all, cp: OO }
+    path: /structures/{cat}/{cp}/{page}
+    defaults: { _controller: ProAddressAppBundle:App:content, cat: all, cp: oo, page: 1 }
     requirements:
         cat:  ^[a-z-]{2,50}
         cp: \w{2}
+        page: \d{1,3}
+
+pa_app_message:
+    path: /message
+    defaults: { _controller: ProAddressAppBundle:App:message }
+    
+pa_app_search:
+    path: /search
+    defaults: { _controller: ProAddressAppBundle:App:search }
+
+# Admin controller
+admin_stat:
+    path: /admin/stats
+    defaults: { _controller: ProAddressAppBundle:Admin:getStat }

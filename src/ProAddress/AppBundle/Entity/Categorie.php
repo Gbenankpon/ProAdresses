@@ -16,6 +16,7 @@ class Categorie
 {
     /**
      * @ORM\OneToMany(targetEntity="ProAddress\AppBundle\Entity\Structure", mappedBy="categorie", cascade={"remove"})
+     * @ORM\JoinColumn(name="structure_id", referencedColumnName="id")
      */
     private $structures;
 

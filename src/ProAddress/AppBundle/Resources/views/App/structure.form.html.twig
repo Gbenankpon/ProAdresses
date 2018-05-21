@@ -1,7 +1,7 @@
 {{ form_start(structureform) }}
 						<div class="row">
 								<span class="form_error">
-								    {{ form_errors(structureform.type) }}
+								    {{ form_errors(structureform.categorie) }}
                                     {{ form_errors(structureform.enseigne) }}
                                     {{ form_errors(structureform.ville) }}
                                     {{ form_errors(structureform.adresse) }}
@@ -12,8 +12,8 @@
                                     {#	{{ form_errors(structureform.logo.file) }} #}
 								</span>
 						  <table class="col-md-10 table table-striped" id="">
-							<tr><td>{{ form_label(structureform.type, 'Type : ') }}</td>
-								<td data-toggle="tooltip" title="Spécialisation. Par exemple: Pharmacie">{{ form_widget(structureform.type) }}</td>
+							<tr><td>{{ form_label(structureform.categorie, 'Type : ') }}</td>
+								<td data-toggle="tooltip" title="Spécialisation. Par exemple: Pharmacie">{{ form_widget(structureform.categorie) }}</td>
 							</tr>
 							<tr><td>{{ form_label(structureform.pays, 'Pays : ') }}</td>
 								<td>{{ form_widget(structureform.pays) }}</td>

@@ -15,13 +15,11 @@ class Structure
 
     /**
      * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Pays", inversedBy="structures", cascade={"persist"})
-     * @ORM\JoinColumn(name="pays_id", referencedColumnName="id")
      */
     private $pays;
 
     /**
      * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Categorie", inversedBy="structures", cascade={"persist"})
-     * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
      */
     private $categorie;
 
@@ -40,13 +38,6 @@ class Structure
      * @ORM\Column(name="date", type="datetime", nullable=true)
      */
     private $date;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=255)
-     */
-    private $type;
 
     /**
      * @var string

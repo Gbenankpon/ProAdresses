@@ -10,7 +10,7 @@
 		<link rel="icon" type="image/png" href="{{ asset('assets/images/lcz.png') }}" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}" /><![endif]-->
 
-		<title>{% block title %}{% endblock %}</title>
+		<title>{% block title %}{{ twig_sitename }}{% endblock %}</title>
 
 			<link rel="stylesheet" href="{{ asset('assets/css/css.css') }}" type="text/css" />
 			<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
@@ -20,11 +20,31 @@
 	</head>
 
 	<body>
+    	{{ render(controller('ProAddressAppBundle:App:stat')) }} {# statistique des visiteurs #}
 					{% include "ProAddressAppBundle::header.html.twig" %}
-					{% block bord %}{% endblock %}
+					{% block after_header %}{% endblock %}
 					{% block nompage %}{% endblock %}
 					{% block structurepage %}{% endblock %}
-					{% block content %}{% endblock %}	
+					<div class="row" id="content">
+						{%  block content %}
+                        <div class="col-md-3">{% block left %}{% endblock %}</div>
+                        <div class="col-md-6 text-center">
+                            <ul class="list-inline text-primary h3">
+                                <li class="">{{ cat|title }}</li> <i class="fa fa-link"></i>
+                                <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Choisissez un pays <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+                                        {% include 'ProAddressAppBundle:App:pays.html.twig' %}
+                                        {#% for line in pays %}
+                                            <li class="item"><a href="{{ path(app.request.attributes.get('_route'), {'cp':line.code, 'cat':cat}) }}">{{ line.nom }}</a></li>
+                                        {% endfor %#}
+                                    </ul>
+                                </li>
+                            </ul>
+                            {% block data %}{% endblock %}
+                        </div>
+                        <div class="col-md-3">{% block right %}{% endblock %}</div>
+                        {% endblock %}
+					</div>
 					{% include "ProAddressAppBundle::footer.html.twig" %}
 
 			<script src="{{ asset('assets/js/jquery-unc-3.2.1.js') }}"></script>

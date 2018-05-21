@@ -1,0 +1,29 @@
+{% extends "ProAddressAnnonceBundle::layout.html.twig" %}
+
+{% block title %}
+Annonce | {{ parent() }}
+{% endblock %}
+
+{% block metadescription %}{% endblock %}
+
+{% block after_header %}
+	<div class="jumbotron navbar-inverse">
+		<div class="container">
+			{{ render(controller('ProAddressAnnonceBundle:Index:getACategorie')) }}
+		</div>
+	</div>
+{% endblock %}
+{% block data %}
+        {% for line in annonces %}
+			<div class="tb-info bg-dfault-hover bg-success col-md-12 text-left">
+				<h6 class="pull-right bg-primary">{{ 'Annonce '~line.acategorie.nom }}</h6>
+				<h3 class="h-band bg-primary title-txt">{{ line.titre }} ({{ line.expiration|date }}) - {{ line.prix }}</h3>
+				{#<h5 class="text-info title-txt-hover">Ville: {{ line.ville }}</h5>#}
+				<h6 class="text-info title-txt-hover"> {{ line.detail}}</h6>
+				<h6 class="text-info title-txt-hover"> Pays: {{ pays.nom~' - ' }}</h6>
+				<h5 class="title-txt-hover text-primary">Contacts : {{ line.contact }}</h5>
+				<br>
+			</div><hr>
+        {% endfor %}
+{% endblock %}
+{% block right %}{% include "ProAddressAnnonceBundle:Content:register.html.twig" %}{% endblock %}

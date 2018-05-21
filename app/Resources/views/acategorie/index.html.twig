@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Acategories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for aCategorie in aCategories %}
+            <tr>
+                <td><a href="{{ path('admin_acategorie_show', { 'id': aCategorie.id }) }}">{{ aCategorie.id }}</a></td>
+                <td>{{ aCategorie.nom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_acategorie_show', { 'id': aCategorie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_acategorie_edit', { 'id': aCategorie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_acategorie_new') }}">Create a new aCategorie</a>
+        </li>
+    </ul>
+{% endblock %}

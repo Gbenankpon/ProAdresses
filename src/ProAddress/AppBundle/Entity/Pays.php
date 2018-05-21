@@ -15,18 +15,21 @@ class Pays
 {
     /**
      * @ORM\OneToMany(targetEntity="ProAddress\AppBundle\Entity\Structure", mappedBy="pays", cascade={"remove"})
+     * @ORM\JoinColumn(name="structure_id", referencedColumnName="id")
      */
     private $structures;
 
     /**
      * @ORM\OneToMany(targetEntity="ProAddress\ServiceBundle\Entity\Service", mappedBy="pays", cascade={"remove"})
+     * @ORM\JoinColumn(name="service_id", referencedColumnName="id")
      */
     private $services;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProAddress\RecrutementBundle\Entity\Recrutement", mappedBy="pays", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="ProAddress\AnnonceBundle\Entity\Annonce", mappedBy="pays", cascade={"remove"})
+     * @ORM\JoinColumn(name="annonce_id", referencedColumnName="id")
      */
-    private $recrutements;
+    private $annonces;
 
     /**
      * @var int
@@ -56,7 +59,7 @@ class Pays
     {
         $this->structures = new ArrayCollection();
         $this->services = new ArrayCollection();
-        $this->recrutements = new ArrayCollection();
+        $this->annonces = new ArrayCollection();
     }
 
     /**
@@ -185,37 +188,39 @@ class Pays
         return $this->services;
     }
 
+
+
     /**
-     * Add recrutement
+     * Add annonce
      *
-     * @param \ProAddress\RecrutementBundle\Entity\Recrutement $recrutement
+     * @param \ProAddress\AnnonceBundle\Entity\Annonce $annonce
      *
      * @return Pays
      */
-    public function addRecrutement(\ProAddress\RecrutementBundle\Entity\Recrutement $recrutement)
+    public function addAnnonce(\ProAddress\AnnonceBundle\Entity\Annonce $annonce)
     {
-        $this->recrutements[] = $recrutement;
+        $this->annonces[] = $annonce;
 
         return $this;
     }
 
     /**
-     * Remove recrutement
+     * Remove annonce
      *
-     * @param \ProAddress\RecrutementBundle\Entity\Recrutement $recrutement
+     * @param \ProAddress\AnnonceBundle\Entity\Annonce $annonce
      */
-    public function removeRecrutement(\ProAddress\RecrutementBundle\Entity\Recrutement $recrutement)
+    public function removeAnnonce(\ProAddress\AnnonceBundle\Entity\Annonce $annonce)
     {
-        $this->recrutements->removeElement($recrutement);
+        $this->annonces->removeElement($annonce);
     }
 
     /**
-     * Get recrutements
+     * Get annonces
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getRecrutements()
+    public function getAnnonces()
     {
-        return $this->recrutements;
+        return $this->annonces;
     }
 }

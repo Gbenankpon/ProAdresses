@@ -8,7 +8,6 @@
             <tr>
                 <th>Id</th>
                 <th>Date</th>
-                <th>Type</th>
                 <th>Enseigne</th>
                 <th>Adresse</th>
                 <th>Ville</th>
@@ -25,7 +24,6 @@
             <tr>
                 <td><a href="{{ path('admin_structure_show', { 'id': structure.id }) }}">{{ structure.id }}</a></td>
                 <td>{% if structure.date %}{{ structure.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ structure.type }}</td>
                 <td>{{ structure.enseigne }}</td>
                 <td>{{ structure.adresse }}</td>
                 <td>{{ structure.ville }}</td>

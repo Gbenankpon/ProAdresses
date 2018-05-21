@@ -1,0 +1,7 @@
+				<div id="navbord" iid="nav-str" class="col-lg-12 text-center">
+					{% for nom, code in twig_pays %}
+					<li class="item">
+					    <a href="{{ path(app.request.attributes.get('_route'), {'cat':cat,'cp': code }) }}">{{ nom|upper }}</a>
+					</li>
+					{% endfor %}
+				</div>

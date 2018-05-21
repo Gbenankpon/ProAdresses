@@ -1,5 +1,45 @@
+pro_address_user_utilisateur:
+    resource: "@ProAddressUserBundle/Controller/UtilisateurController.php"
+    type:     annotation
+
+pro_address_app_message:
+    resource: "@ProAddressAppBundle/Controller/MessageController.php"
+    type:     annotation
+
+pro_address_annonce_a_categorie:
+    resource: "@ProAddressAnnonceBundle/Controller/ACategorieController.php"
+    type:     annotation
+
+pro_address_annonce_annonce:
+    resource: "@ProAddressAnnonceBundle/Controller/AnnonceController.php"
+    type:     annotation
+
+pro_address_annonce:
+    resource: "@ProAddressAnnonceBundle/Resources/config/routing.yml"
+    prefix:   /annonces
+
 pro_address_service_s_categorie:
     resource: "@ProAddressServiceBundle/Controller/SCategorieController.php"
+    type:     annotation
+
+pro_address_service_service:
+    resource: "@ProAddressServiceBundle/Controller/ServiceController.php"
+    type:     annotation
+
+pro_address_service:
+    resource: "@ProAddressServiceBundle/Resources/config/routing.yml"
+    prefix:   /services
+
+pro_address_app_pays:
+    resource: "@ProAddressAppBundle/Controller/PaysController.php"
+    type:     annotation
+
+pro_address_app_categorie:
+    resource: "@ProAddressAppBundle/Controller/CategorieController.php"
+    type:     annotation
+
+pro_address_app_structure:
+    resource: "@ProAddressAppBundle/Controller/StructureController.php"
     type:     annotation
 
 pro_address_app_categorie:
@@ -9,18 +49,6 @@ pro_address_app_categorie:
 pro_address_app:
     resource: "@ProAddressAppBundle/Resources/config/routing.yml"
     prefix:   /
-
-pro_address_recrutement_recrutement:
-    resource: "@ProAddressRecrutementBundle/Controller/RecrutementController.php"
-    type:     annotation
-
-pro_address_recrutement:
-    resource: "@ProAddressRecrutementBundle/Resources/config/routing.yml"
-    prefix:   /recrutements
-
-pro_address_service:
-    resource: "@ProAddressServiceBundle/Resources/config/routing.yml"
-    prefix:   /services
 
 pro_address_user_utilisateur:
     resource: "@ProAddressUserBundle/Controller/UtilisateurController.php"

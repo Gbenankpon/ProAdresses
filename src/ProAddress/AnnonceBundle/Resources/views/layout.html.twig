@@ -1,0 +1,16 @@
+{% extends "ProAddressAppBundle::layout.html.twig" %}
+
+{% block title %}{{ parent()~' | Annonces' }}{% endblock %}
+
+{% block metadescription %}{% endblock %}
+
+{% block after_header %}
+	<div class="jumbotron navbar-inverse">
+		<div class="container">
+			{{ render(controller('ProAddressAnnonceBundle:Index:getACategorie')) }}
+		</div>
+	</div>
+{% endblock %}
+{% block left %}{% endblock %}
+{% block data %}{% endblock %}
+{% block right %}{% endblock %}

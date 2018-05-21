@@ -34,7 +34,7 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
-                default_target_path:  od_app_accueil
+                default_target_path:  pa_app_accueil
             logout:
                 path: /logout
                 target: pa_app_accueil

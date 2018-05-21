@@ -1,0 +1,39 @@
+{% extends "ProAddressAppBundle::layout.html.twig" %}
+
+{% block title %}
+{{ page }} - {{ parent() }}, Les structures de type {{ page }} en ligne
+{% endblock %}
+
+{% block metadescription %}
+Retrouver toutes les structures de type {{ page }}{% if zone is defined %} - pays - {{ zone|title }}{% else %} au Bénin {% endif %}
+{% endblock %}
+
+{% block metakeywords %}
+{{ page }},{{ parent() }},structure
+{% endblock %}
+
+{% block content %}
+	{% if page == 'Search' %}
+		{% if searchArray is empty %}
+			<h1 class="text-center">Desolé!<br>Aucun résultat pour votre recherche</h1>
+				<br><h2 class="text-center"><em>recherche effectuée</em></h2>
+	    {% else %}
+				<table class="page-table table table-bordered">
+				<thead>
+					<tr>
+						<th>Structure</th><th>Adresse</th><th style="background: #888; color: #fff;">Ville</th>
+					</tr>
+				</thead>
+				<tbody>
+			      {% for entity in searchArray %}
+					<tr>
+						<td>{{ entity.categorie.nom }} {{ entity.enseigne|raw }}</td>
+						<td>{{ entity.adresse|raw }}</td>
+						<td style="background: #888; color: #DDD;">{{ entity.ville|raw }}</td>
+					</tr>
+ 				  {% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
+	{% endif %}
+{% endblock %}

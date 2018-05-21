@@ -1,6 +1,7 @@
 pa_service:
-    path:     /{cat}/{cp}
-    defaults: { _controller: ProAddressServiceBundle:Index:index, cat: all, cp: OO }
+    path:     /{cat}/{cp}/{page}
+    defaults: { _controller: ProAddressServiceBundle:Index:content, cat: all, cp: oo, page: 1 }
     requirements:
-        cat:  \w{2,50}
+        cat:  ^[a-z-]{2,50}
         cp: \w{2}
+        page: \d{1,3}
