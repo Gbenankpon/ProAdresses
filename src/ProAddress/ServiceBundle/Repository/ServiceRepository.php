@@ -23,6 +23,7 @@ class ServiceRepository extends \Doctrine\ORM\EntityRepository
             $qb = $this->createQueryBuilder('s');
             $qb ->join('s.scategories', 'c')
                 ->where($qb->expr()->in('c.nom', $ar))
+                ->andWhere('s.online = true')
                 ->getQuery();
             $qb ->setFirstResult(($page-1) * 10)
                 ->setMaxResults(10);
@@ -33,6 +34,7 @@ class ServiceRepository extends \Doctrine\ORM\EntityRepository
             $qb ->join('s.pays','p')
                 ->where('p.code= :cp')
                     ->setParameter('cp',$cp)
+                ->andWhere('s.online = true')
                 ->getQuery();
             $qb ->setFirstResult(($page-1) * 10)
                 ->setMaxResults(10);
@@ -46,6 +48,7 @@ class ServiceRepository extends \Doctrine\ORM\EntityRepository
                 //->setParameter('cat',$cat)
             ->andWhere('p.code= :cp')
                 ->setParameter('cp',$cp)
+            ->andWhere('s.online = true')
             ->getQuery();
         $qb ->setFirstResult(($page-1) * 10)
             ->setMaxResults(10);

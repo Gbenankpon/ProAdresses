@@ -138,4 +138,3 @@ fos_user:
     #        type:               FOS\UserBundle\Form\Type\GroupFormType
     #        name:               fos_user_group_form
     #        validation_groups:  [Registration, Default]
-

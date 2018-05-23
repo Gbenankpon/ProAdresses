@@ -7,6 +7,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+
 class AnnonceType extends AbstractType
 {
     /**
@@ -20,10 +24,12 @@ class AnnonceType extends AbstractType
             ->add('detail')
             ->add('prix')
             ->add('contact')
+            ->add('email', EmailType::class)
             ->add('expiration')
             ->add('acategorie', EntityType::class, array(
                 'class'=>'ProAddressAnnonceBundle:ACategorie',
-                'choice_label'=>'nom'
+                'choice_label'=>'nom',
+                'label'=>'Type'
             ))
             ->add('pays', EntityType::class, array(
                 'class'=>'ProAddressAppBundle:Pays',

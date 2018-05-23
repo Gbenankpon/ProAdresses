@@ -6,7 +6,7 @@ pa_app_structure:
     path: /structures/{cat}/{cp}/{page}
     defaults: { _controller: ProAddressAppBundle:App:content, cat: all, cp: oo, page: 1 }
     requirements:
-        cat:  ^[a-z-]{2,50}
+        cat:  ^[a-z|-]{2,50}
         cp: \w{2}
         page: \d{1,3}
 

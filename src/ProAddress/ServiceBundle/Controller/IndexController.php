@@ -66,7 +66,7 @@ class IndexController extends Controller
      * @param $cat
      * @param $cp
      */
-    public function contentAction($cat,$cp,$page, Request $request){
+    public function contentAction($cat,$cp,$page,$id, Request $request){
         $em = $this->getDoctrine()->getManager();
 
         // register service form
@@ -78,8 +78,19 @@ class IndexController extends Controller
 
             if ($serviceform->isSubmitted() && $serviceform->isValid()) {
                 $em = $this->getDoctrine()->getManager();
+                $post = $serviceform->getData();
+                $repo = $em->getRepository('ProAddressServiceBundle:Service')->findAll();
+                foreach ($repo as $item) {
+                    if(strtoupper($item->getEntreprise()) === strtoupper($post->getEntreprise())
+                        && strtoupper($item->getSpecialite()) === strtoupper($post->getSpecialite())
+                        && strtoupper($item->getPays()->getNom()) === strtoupper($post->getPays()->getNom())){
+                        $this->get('session')->getFlashBag()->add('warning', 'Ce service existe déjà !');
+                        return $this->redirect($this->generateUrl('pa_service'));
+                    }
+                }
                 $em->persist($service);
                 $em->flush();
+                $this->get('session')->getFlashBag()->add('success', 'Données envoyés avec succès !');
             }
 
             return $this->redirectToRoute('pa_app_accueil');
@@ -98,6 +109,12 @@ class IndexController extends Controller
                     'serviceform'=>$serviceform->createView())
             );
         }
+        if($id === 0){
+            $unservice = '';
+        }
+        else{
+            $unservice = $em->getRepository('ProAddressServiceBundle:Service')->findOneById($id);
+        }
 
         $services = $em->getRepository('ProAddressServiceBundle:Service')->findByCatCp($cat,$cp,$page);
         $pays = $em->getRepository('ProAddressAppBundle:Pays')->findOneBy(array('code'=>$cp));
@@ -108,7 +125,8 @@ class IndexController extends Controller
             'pays'=>$pays,
             'page'=> $page,
             'nbrPage' => ceil(count($services)/10),
-            'serviceform'=>$serviceform->createView()
+            'serviceform'=>$serviceform->createView(),
+            'unservice'=>$unservice
         ));
     }
 }

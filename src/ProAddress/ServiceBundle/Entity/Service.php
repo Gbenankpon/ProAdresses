@@ -52,14 +52,14 @@ class Service
     /**
      * @var string
      *
-     * @ORM\Column(name="contact", type="string", length=255)
+     * @ORM\Column(name="contact", type="string", length=255, nullable=true)
      */
     private $contact;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="detail", type="text")
+     * @ORM\Column(name="detail", type="text", nullable=true)
      */
     private $detail;
 
@@ -69,6 +69,13 @@ class Service
      * @ORM\Column(name="nomrespo", type="string", length=255, nullable=true)
      */
     private $nomrespo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     */
+    private $email;
 
     /**
      * @var \DateTime
@@ -325,5 +332,29 @@ class Service
     public function getScategories()
     {
         return $this->scategories;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Service
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

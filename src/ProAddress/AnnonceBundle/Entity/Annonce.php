@@ -53,7 +53,7 @@ class Annonce
     /**
      * @var string
      *
-     * @ORM\Column(name="detail", type="text")
+     * @ORM\Column(name="detail", type="text", nullable=true)
      */
     private $detail;
 
@@ -70,6 +70,13 @@ class Annonce
      * @ORM\Column(name="contact", type="string", length=255, nullable=true)
      */
     private $contact;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     */
+    private $email;
 
     /**
      * @var \DateTime
@@ -312,5 +319,29 @@ class Annonce
         $this->pays = $pays;
 
         return $this;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Annonce
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

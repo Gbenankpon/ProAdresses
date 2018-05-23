@@ -66,7 +66,7 @@ class IndexController extends Controller
      * @param $cat
      * @param $cp
      */
-    public function contentAction($cat,$cp,$page, Request $request){
+    public function contentAction($cat,$cp,$page,$id, Request $request){
         $em = $this->getDoctrine()->getManager();
 
         // register annonce form
@@ -78,11 +78,23 @@ class IndexController extends Controller
 
             if ($annonceform->isSubmitted() && $annonceform->isValid()) {
                 $em = $this->getDoctrine()->getManager();
+                $post = $annonceform->getData();
+                $repo = $em->getRepository('ProAddressAnnonceBundle:Annonce')->findAll();
+                foreach ($repo as $item) {
+                    if(strtoupper($item->getTitre()) === strtoupper($post->getTitre())
+                        && strtoupper($item->getPrix()) === strtoupper($post->getPrix())
+                        && strtoupper($item->getPays()->getNom()) === strtoupper($post->getPays()->getNom())
+                        && strtoupper($item->getACategorie()->getNom()) === strtoupper($post->getACategorie()->getNom())){
+                        $this->get('session')->getFlashBag()->add('warning', 'Cette annonce existe déjà !');
+                        return $this->redirect($this->generateUrl('pa_annonce'));
+                    }
+                }
                 $em->persist($annonce);
                 $em->flush();
+                $this->get('session')->getFlashBag()->add('success', 'Données envoyés avec succès !');
             }
 
-            return $this->redirectToRoute('pa_app_accueil');
+            return $this->redirectToRoute('pa_annonce');
         }// end form
 
         if($cp === 'oo'){
@@ -99,6 +111,12 @@ class IndexController extends Controller
             );
         }
 
+        if($id === 0){
+            $annonce = '';
+        }
+        else{
+            $annonce = $em->getRepository('ProAddressAnnonceBundle:Annonce')->findOneById($id);
+        }
         $annonces = $em->getRepository('ProAddressAnnonceBundle:Annonce')->findByCatCp($cat,$cp,$page);
         $pays = $em->getRepository('ProAddressAppBundle:Pays')->findOneBy(array('code'=>$cp));
 
@@ -108,7 +126,8 @@ class IndexController extends Controller
             'pays'=>$pays,
             'page'=> $page,
             'nbrPage' => ceil(count($annonces)/10),
-            'annonceform'=>$annonceform->createView()
+            'annonceform'=>$annonceform->createView(),
+            'annonce'=>$annonce
         ));
     }
 }

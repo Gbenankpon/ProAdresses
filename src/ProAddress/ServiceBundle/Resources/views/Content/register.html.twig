@@ -23,11 +23,13 @@
                 <tr><td>{{ form_label(serviceform.specialite) }}</td><td>{{ form_widget(serviceform.specialite) }}</td></tr>
                 <tr><td>{{ form_label(serviceform.pays) }}</td><td>{{ form_widget(serviceform.pays) }}</td></tr>
                 <tr><td>{{ form_label(serviceform.contact) }}</td><td>{{ form_widget(serviceform.contact) }}</td></tr>
+                <tr><td>{{ form_label(serviceform.email) }}</td><td>{{ form_widget(serviceform.email) }}</td></tr>
                 <tr><td>{{ form_label(serviceform.detail) }}</td><td>{{ form_widget(serviceform.detail) }}</td></tr>
                 <tr><td>{{ form_label(serviceform.nomrespo) }}</td><td>{{ form_widget(serviceform.nomrespo) }}</td></tr>
                 <tr><td>{{ form_label(serviceform.scategories) }}</td><td>{{ form_widget(serviceform.scategories) }}</td></tr>
+                <tr class="hide"><td>{{ form_label(serviceform.online) }}</td><td>{{ form_widget(serviceform.online) }}</td></tr>
             </table>
-            {{ form_rest(serviceform) }}
+            {# { form_rest(serviceform) }#}
         </div>
         <div class="panel-footer">
             <input type="submit" class="btn btn-info form-control" value="Publier" />

@@ -15,7 +15,7 @@ class StructureRepository extends \Doctrine\ORM\EntityRepository
     private $i = 0;
     private $entitiesAr = array();
     public function formSearcher($searched){
-        foreach($this->findAll() as $entity){
+        foreach($this->findByOnline(true) as $entity){
             if(preg_match("#$searched#i", $entity->getEnseigne()) || preg_match("#$searched#i", $entity->getAdresse())){
                 $this->entitiesAr[$this->i] = $entity;
                 $enseigne[$this->i] = $entity->getEnseigne();
@@ -35,6 +35,7 @@ class StructureRepository extends \Doctrine\ORM\EntityRepository
         for($j = 0;$j < $this->i; $j++){
             $this->entitiesAr[$j]->setEnseigne($enseigne[$j]);
             $this->entitiesAr[$j]->setAdresse($adr[$j]);
+            $this->_em->detach($this->entitiesAr[$j]);
         }
 
         	return $this->entitiesAr;
@@ -51,7 +52,7 @@ class StructureRepository extends \Doctrine\ORM\EntityRepository
                 //->where($qb->expr()->in('c.nom', $ar))
                 ->where('c.nom= :cat')
                     ->setParameter('cat',$cat)
-                //->orderBy('s.date', 'desc')
+                ->andWhere('s.online = true')
                 ->getQuery();
             // On définit l'article à partir duquel commencer la liste
             $qb ->setFirstResult(($page-1) * 10)
@@ -66,6 +67,7 @@ class StructureRepository extends \Doctrine\ORM\EntityRepository
             $qb ->join('s.pays','p')
                 ->where('p.code= :cp')
                     ->setParameter('cp',$cp)
+                ->andWhere('s.online = true')
                 ->getQuery();
             $qb ->setFirstResult(($page-1) * 10)
                 ->setMaxResults(10);
@@ -80,6 +82,7 @@ class StructureRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('cat',$cat)
             ->andWhere('p.code= :cp')
                 ->setParameter('cp',$cp)
+            ->andWhere('s.online = true')
             //->orderBy('s.date', 'desc')
             ->getQuery();
         // On définit l'article à partir duquel commencer la liste

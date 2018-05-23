@@ -39,9 +39,9 @@
 							<tr><td>{{ form_label(structureform.email, 'E-mail : ') }}</td>
 								<td>{{ form_widget(structureform.email) }}</td>
 							</tr>
-							{#<tr><td>{{ form_label(structureform.logo.file, 'Vous avez un logo/image ? ') }}</td>
-								<td>{{ form_widget(structureform.logo.file) }}</td>
-							</tr>#}	
+							<tr class="hide"><td>{{ form_label(structureform.online, '') }}</td>
+								<td>{{ form_widget(structureform.online) }}</td>
+							</tr>
 						</table>
 						{#{ form_rest(structureform) }#}
 						<br><button type="submit" class="btn btn-info pull-right"><span class="glyphicon glyphicon-ok-sign"></span> Envoyer</button>

@@ -60,7 +60,7 @@ class AppController extends Controller
 
         // Register categories of structure if table's empty
         if(empty($em->getRepository('ProAddressAppBundle:Categorie')->findAll())) {
-            $catAr = ['bibliotheque','centre-de-sante','partisserie','pharmacie','supermarche'];
+            $catAr = ['bibliotheque','centre-de-sante','hotel','maternelle','primaire','partisserie','pharmacie','restau','secondaire|lycee','supermarche','universite'];
 
             foreach($catAr as $i=>$cat){
                 $categorie[$i] = new Categorie();

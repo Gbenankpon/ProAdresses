@@ -50,11 +50,11 @@
 	{% endif %#}
 		
     <div style="" class="col-sm-3">
-        <form class="fa-sm" method="post" action="{{ path('pa_app_search', {'page': 'search'}) }}" idd="navbar-form">
+        <form class="fa-sm" method="post" action="{{ path('pa_app_search', {'page': 'search'}) }}">
             <div class="form-group has-feedback">
                 <label class="sr-only col-sm-4 control-label" for="recherche">Recherche</label>
                 <span class="glyphicon glyphicon-search form-control-feedback fa-sm"></span>
-                <input class="input-sm form-control fa-md" type="text" placeholder="Rechercher une structure" name="recherche" id="recherche" >
+                <input class="input-sm form-control fa-md" type="text" placeholder="Rechercher une structure, une ville" name="recherche" id="recherche" >
             </div>
         </form>
     </div>

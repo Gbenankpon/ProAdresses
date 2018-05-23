@@ -14,16 +14,43 @@ Annonce | {{ parent() }}
 	</div>
 {% endblock %}
 {% block data %}
+	{% if annonce is not empty %}
+		<div class="col-md-12 well">
+			<div class="panel">
+                <div class="panel-heading">
+                    <h3 class="h-band title-txt">{{ annonce.titre }} ({{ annonce.expiration|date }}) - {{ annonce.prix }}</h3>
+                </div>
+				<div class="panel-body">
+                    <p>
+                        {{ annonce.detail }}
+                    </p>
+				</div>
+			</div>
+		</div>
+	{% endif %}
         {% for line in annonces %}
 			<div class="tb-info bg-dfault-hover bg-success col-md-12 text-left">
-				<h6 class="pull-right bg-primary">{{ 'Annonce '~line.acategorie.nom }}</h6>
-				<h3 class="h-band bg-primary title-txt">{{ line.titre }} ({{ line.expiration|date }}) - {{ line.prix }}</h3>
+				<h6 class="pull-right">{{ 'Annonce '~line.acategorie.nom }}</h6>
+                <h3 class="h-band title-txt">
+                    <a style="text-decoration: none; color: white;" href="{{ path('pa_annonce', {'cat':line.acategorie.nom, 'cp':line.pays.code, 'id':line.id}) }}">{{ line.titre }} ({{ line.expiration|date }}) - {{ line.prix }}</a>
+                </h3>
 				{#<h5 class="text-info title-txt-hover">Ville: {{ line.ville }}</h5>#}
-				<h6 class="text-info title-txt-hover"> {{ line.detail}}</h6>
+				<h6 class="text-info title-txt-hover"> {{ line.detail }}</h6>
 				<h6 class="text-info title-txt-hover"> Pays: {{ pays.nom~' - ' }}</h6>
 				<h5 class="title-txt-hover text-primary">Contacts : {{ line.contact }}</h5>
 				<br>
-			</div><hr>
+			</div>{% if not loop.last %}<div class=""><span class="glyphicon glyphicon-link"></span> </div>{% endif %}
         {% endfor %}
+    <div class="pagination">
+        <ul class="list-inline">
+            {# On utilise la fonction range(a, b) qui crée un tableau de
+            valeurs entre a et b #}
+            {% for p in range(1, nbrPage) %}
+                <li{% if p == page %} class="active"{% endif %}>
+                    <a href="{{ path(app.request.attributes.get('_route'), {'cat':cat,'cp':pays.code, 'page': p }) }}">{{ p }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 {% block right %}{% include "ProAddressAnnonceBundle:Content:register.html.twig" %}{% endblock %}

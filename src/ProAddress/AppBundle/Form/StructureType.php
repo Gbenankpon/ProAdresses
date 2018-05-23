@@ -23,7 +23,7 @@ class StructureType extends AbstractType
             ->add('region')
             ->add('tel')
             ->add('email')
-            //->add('online')
+            ->add('online')
             ->add('pays', EntityType::class, array(
                 'class'=>'ProAddressAppBundle:Pays',
                 'choice_label'=>'nom')

@@ -18,12 +18,28 @@ Service | {{ parent() }}
 {% endblock %}
 
 {% block data %}
+    {% if unservice is not empty %}
+		<div class="col-md-12 well">
+			<div class="panel">
+                <div class="panel-heading">
+                    <h3 class="h-band bg-primary title-txt">{{ unservice.entreprise }} ({{ unservice.pays.nom }}) - {{ unservice.specialite }}</h3>
+                </div>
+				<div class="panel-body">
+					<p>
+                        {{ unservice.detail }}
+					</p>
+				</div>
+			</div>
+		</div>
+    {% endif %}
         {% for service in services %}
 			<div class="tb-info bg-dfault-hover bg-success col-md-12 text-left">
 				<h6 class="pull-right bg-primary">Service</h6>
-				<h3 class="h-band bg-primary title-txt">{{ service.entreprise }} ({{ service.pays.nom }}) - {{ service.specialite }}</h3>
+				<h3 class="h-band bg-primary title-txt">
+					<a style="text-decoration: none; color: white;" href="{{ path('pa_service', {'cat':cat, 'cp':service.pays.code, 'id':service.id}) }}">{{ service.entreprise }} ({{ service.pays.nom }}) - {{ service.specialite }}</a>
+				</h3>
 				{#<h5 class="text-info title-txt-hover">Ville: {{ service.ville }}</h5>#}
-				<h6 class="text-info title-txt-hover"> {{ service.detail}}</h6>
+				<h6 class="text-info title-txt-hover"> {{ service.detail }}</h6>
 				<h5 class="title-txt-hover text-primary">Contacts : {{ service.contact }}</h5>
 				<h6 class="text-info title-txt-hover relief">Catégories:
 					{% for c in service.scategories %}
@@ -31,7 +47,7 @@ Service | {{ parent() }}
 						{% endfor %}
 				</h6>
 				<br>
-			</div><hr>
+			</div>{% if not loop.last %}<div class=""><span class="glyphicon glyphicon-link"></span> </div>{% endif %}
         {% endfor %}
         <div class="pagination">
             <ul class="list-inline">

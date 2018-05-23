@@ -20,14 +20,14 @@ Structure | {{ parent() }}
 {% block data %}
         {% for line in structures %}
 			<div class="tb-info bg-dfault-hover bg-success col-md-12 text-left">
-				<h6 class="pull-right bg-primary">Structure</h6>
-				<h3 class="h-band bg-primary title-txt">{{ line.enseigne }} ({{ line.pays.nom }}) - {{ line.ville }}</h3>
+				<h6 class="pull-right">Structure</h6>
+				<h3 class="h-band title-txt">{{ line.enseigne }} ({{ line.pays.nom }}) - <span class="fa-xs">{{ line.ville }}</span></h3>
                 {#<h5 class="text-info title-txt-hover">Ville: {{ line.ville }}</h5>#}
-				<h6 class="text-info title-txt-hover">Adresse: {{ line.adresse }}</h6>
-				<h5 class="title-txt-hover text-primary">Contacts : {{ line.email}} - Tél: {{ line.tel }}</h5>
-				<h6 class="text-info title-txt-hover relief">Ville: {{ line.ville }}, Région: {{ line.region }}, Département: {{ line.departement }}</h6>
+				<h5 class="title-txt-hover text-primary">Adresse: {{ line.adresse }}</h5>
+				<h6 class="text-info title-txt-hover">Email : {{ line.email}} - Tél: {{ line.tel }}</h6>
+				<h6 class="text-info title-txt-hover relief">Ville: {{ line.ville }}, Département: {{ line.departement }}, Région: {{ line.region }}</h6>
 				<br>
-			</div><hr>
+			</div>{% if not loop.last %}<div class=""><span class="glyphicon glyphicon-link"></span> </div>{% endif %}
         {% endfor %}
 		<div class="pagination">
 			<ul class="list-inline">

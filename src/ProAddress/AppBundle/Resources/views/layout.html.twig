@@ -12,9 +12,11 @@
 
 		<title>{% block title %}{{ twig_sitename }}{% endblock %}</title>
 
-			<link rel="stylesheet" href="{{ asset('assets/css/css.css') }}" type="text/css" />
-			<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
-			<link rel="stylesheet" href="{{ asset('assets/web-fonts-with-css/css/fontawesome.css') }}" />
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		{#<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">#}
+		<link rel="stylesheet" href="{{ asset('assets/fontawesome506/web-fonts-with-css/css/fontawesome.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('assets/css/css.css') }}" type="text/css" />
+		<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
 		{% block stylesheets %}
 		{% endblock %}
 	</head>
@@ -27,10 +29,21 @@
 					{% block structurepage %}{% endblock %}
 					<div class="row" id="content">
 						{%  block content %}
-                        <div class="col-md-3">{% block left %}{% endblock %}</div>
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-2">{% block left %}{% endblock %}</div>
+                        <div class="col-md-7 text-center">
                             <ul class="list-inline text-primary h3">
-                                <li class="">{{ cat|title }}</li> <i class="fa fa-link"></i>
+                                <li class="">
+									{{ cat|title }}
+                                    {{ app.request.query.get('cp') == 'bj' ? 'Bénin ' : '' }}
+                                    {{ app.request.query.get('cp') == 'bf' ? 'Burkina Faso ' : '' }}
+                                    {{ app.request.query.get('cp') == 'ci' ? 'Côte D\'Ivoire ' }}
+                                    {{ app.request.query.get('cp') == 'gw' ? 'Guinnée Bissau ' }}
+                                    {{ app.request.query.get('cp') == 'ml' ? 'Mali ' }}
+                                    {{ app.request.query.get('cp') == 'ng' ? 'Niger ' }}
+                                    {{ app.request.query.get('cp') == 'sn' ? 'Sénégal ' }}
+                                    {{ app.request.query.get('cp') == 'tg' ? 'Togo ' }}
+								</li>
+								<i class="fa fa-angle-double-right fa-xs"></i>
                                 <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Choisissez un pays <span class="caret"></span> </a>
                                     <ul class="dropdown-menu">
                                         {% include 'ProAddressAppBundle:App:pays.html.twig' %}
@@ -45,6 +58,7 @@
                         <div class="col-md-3">{% block right %}{% endblock %}</div>
                         {% endblock %}
 					</div>
+        <hr>
 					{% include "ProAddressAppBundle::footer.html.twig" %}
 
 			<script src="{{ asset('assets/js/jquery-unc-3.2.1.js') }}"></script>

@@ -4,7 +4,7 @@
 {{ form_end(annonceform) }}#}
 
 <div class="text-center">
-    <h3 class="color-primary three-title">Publier une annonce</h3>
+    <h3 class="color-primary three-title bg-primary">Publier une annonce</h3>
     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <p class="text-center"><a class="text-warning" href="{{ path('fos_user_security_login') }}">Se connecter  <span class="glyphicon glyphicon-chevron-right"></span> </a></p>
     {% endif %}
@@ -25,7 +25,7 @@
                 <tr><td>{{ form_label(annonceform.pays) }}</td><td>{{ form_widget(annonceform.pays) }}</td></tr>
                 <tr><td>{{ form_label(annonceform.detail) }}</td><td>{{ form_widget(annonceform.detail) }}</td></tr>
                 <tr><td>{{ form_label(annonceform.contact) }}</td><td>{{ form_widget(annonceform.contact) }}</td></tr>
-                <tr><td>{{ form_label(annonceform.expiration) }}</td><td>{{ form_widget(annonceform.expiration) }}</td></tr>
+                <tr><td>{{ form_label(annonceform.email) }}</td><td>{{ form_widget(annonceform.email) }}</td></tr>
             </table>
             {{ form_rest(annonceform) }}
         </div>

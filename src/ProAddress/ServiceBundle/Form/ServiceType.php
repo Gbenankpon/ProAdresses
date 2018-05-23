@@ -7,6 +7,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class ServiceType extends AbstractType
 {
@@ -16,18 +19,27 @@ class ServiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('entreprise')
-            ->add('specialite')
+            ->add('entreprise', TextType::class, array(
+                'label'=>'Nom de l\'entreprise'
+            ))
+            ->add('specialite', TextType::class, array(
+                'label'=>'Spécialité'
+            ))
             ->add('contact')
-            ->add('detail')
-            ->add('nomrespo')
-            //->add('date')
-            //->add('online')
+            ->add('email', EmailType::class)
+            ->add('detail', TextareaType::class, array(
+                'label'=>'Détails'
+            ))
+            ->add('nomrespo', TextType::class, array(
+                'label'=>'Responsable'
+            ))
+            ->add('online')
             ->add('scategories', EntityType::class, array(
                 'class'=>'ProAddressServiceBundle:SCategorie',
                 'choice_label'=>'nom',
                     'multiple'=>true,
-                    'expanded'=>true)
+                    'expanded'=>true,
+                'label'=>'Domaine')
             )
             ->add('pays', EntityType::class, array(
                 'class'=>'ProAddressAppBundle:Pays',
