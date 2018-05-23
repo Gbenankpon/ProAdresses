@@ -3,37 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b0c11b10-cf7d-44c9-8b3a-74c747819fdf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Controller/IndexController.php" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Entity/Annonce.php" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Entity/Annonce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Form/AnnonceType.php" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Form/AnnonceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/Content/content.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/Content/content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/Content/index.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/Content/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/Content/register.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/Content/register.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/acategorie.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/acategorie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AppController.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AppController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Form/StructureType.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Form/StructureType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Repository/StructureRepository.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Repository/StructureRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/categorie.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/categorie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/message.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/message.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/pays.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/pays.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/search.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/search.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/structure.form.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/structure.form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/content.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/index.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/navbar.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/navbar.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Controller/IndexController.php" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Entity/Service.php" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Entity/Service.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Form/ServiceType.php" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Form/ServiceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Repository/ServiceRepository.php" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Repository/ServiceRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/views/Content/content.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/views/Content/content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/views/Content/index.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/views/Content/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/views/Content/register.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Resources/views/Content/register.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/css.css" afterPath="$PROJECT_DIR$/web/assets/css/css.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -578,7 +549,7 @@
       <workItem from="1526908323750" duration="7730000" />
       <workItem from="1526974174321" duration="25393000" />
       <workItem from="1527060623249" duration="10330000" />
-      <workItem from="1527115991624" duration="2068000" />
+      <workItem from="1527115991624" duration="2197000" />
     </task>
     <task id="LOCAL-00001" summary="Commit du 01:10 Lundi, 21-05-2018">
       <created>1526861530496</created>
@@ -587,11 +558,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526861530496</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit du 00:28 Jeudi, 24-05-2018">
+      <created>1527118182365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527118182365</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290604000" />
+    <option name="totallyTimeSpent" value="290733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1280" height="773" extended-state="6" />
@@ -626,7 +604,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit du 01:10 Lundi, 21-05-2018" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit du 01:10 Lundi, 21-05-2018" />
+    <MESSAGE value="Commit du 00:28 Jeudi, 24-05-2018" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit du 00:28 Jeudi, 24-05-2018" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -800,6 +779,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="54" column="75" lean-forward="false" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -858,6 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
           <caret line="90" column="17" lean-forward="false" selection-start-line="79" selection-start-column="57" selection-end-line="90" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -865,6 +846,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="85" column="107" lean-forward="false" selection-start-line="85" selection-start-column="107" selection-end-line="85" selection-end-column="107" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -872,6 +854,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -879,6 +862,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -886,6 +870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="384" column="19" lean-forward="false" selection-start-line="384" selection-start-column="19" selection-end-line="384" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -908,6 +893,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -915,6 +901,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -922,6 +909,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="56" column="113" lean-forward="false" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -929,6 +917,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="118" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="118" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +925,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="33" column="114" lean-forward="false" selection-start-line="33" selection-start-column="114" selection-end-line="33" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -943,6 +933,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="29" column="118" lean-forward="false" selection-start-line="29" selection-start-column="118" selection-end-line="29" selection-end-column="118" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,6 +941,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="41" column="118" lean-forward="false" selection-start-line="41" selection-start-column="118" selection-end-line="41" selection-end-column="118" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -957,6 +949,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -964,6 +957,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="26" column="114" lean-forward="false" selection-start-line="26" selection-start-column="114" selection-end-line="26" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -971,6 +965,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="49" column="118" lean-forward="false" selection-start-line="49" selection-start-column="118" selection-end-line="49" selection-end-column="118" />
+          <folding />
         </state>
       </provider>
     </entry>
