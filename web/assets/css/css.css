@@ -226,6 +226,10 @@ text-decoration: line-through;
 background:lightgray;
 }
 @font-face{
+font-family: myUbuntu;
+src: url('font-face/ubuntu.ttf');
+}
+@font-face{
 font-family: myArcher;
 src: url('font-face/ARCHER.TTF');
 }
@@ -246,21 +250,10 @@ body{
     min-height: ;
 	height: 100%;
 	/*background: url('../images/fondmap.png') !important;#aaa;#FFF;#55E;*/
+	font-family: 'myUbuntu' !important;
 }
 .row{
 	margin: 0 !important;
-}
-.bodyContainer{
-	padding: 0 !important;
-	display: block !important;	
-	border: 4px #489 solid !important;
-	background: #FFF;
-	-moz-box-shadow: 0 0 12px black;
-	-webkit-box-shadow: 0 0 12px black;
-	-o-box-shadow: 0 0 12px black;
-	-ms-box-shadow: 0 0 12px black;
-	box-shadow: 0 0 12px black;
-    font-family:ubuntu, arial;
 }
 #pageHeader{
 	width:100%;

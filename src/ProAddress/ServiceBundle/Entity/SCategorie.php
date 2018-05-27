@@ -52,7 +52,7 @@ class SCategorie
      *
      * @param string $nom
      *
-     * @return Categorie
+     * @return SCategorie
      */
     public function setNom($nom)
     {
@@ -76,7 +76,7 @@ class SCategorie
      *
      * @param \ProAddress\ServiceBundle\Entity\Service $service
      *
-     * @return Categorie
+     * @return SCategorie
      */
     public function addService(\ProAddress\ServiceBundle\Entity\Service $service)
     {

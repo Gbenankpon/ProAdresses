@@ -8,11 +8,15 @@
 					{#<li><a rel="nofollow" href="{{ path('fos_user_profile_show') }}">Profile</a></li>
 					<li><a rel="nofollow" href="{{ path('fos_user_profile_edit') }}">Éditer Profile</a></li>#}
 					{% if is_granted("ROLE_ADMIN") %}
-						<li><a class="small" rel="nofollow" href="{{ path('admin_stat') }}">Stats</a></li>
+						<li><a rel="nofollow" href="{{ path('admin_stat') }}">Stats</a></li>
 						<li><a rel="nofollow" href="{{ path('admin_message_index') }}">Messages</a></li>
 					    <li><a rel="nofollow" href="{{ path('admin_structure_index') }}">Structures</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_categorie_index') }}">Categorie</a></li>
+					    <li><a rel="nofollow" href="{{ path('admin_pays_index') }}">Pays</a></li>
 						<li><a rel="nofollow" href="{{ path('admin_annonce_index') }}">Annonces</a></li>
+						<li><a rel="nofollow" href="{{ path('admin_acategorie_index') }}">ACategorie</a></li>
 						<li><a rel="nofollow" href="{{ path('admin_service_index') }}">Services</a></li>
+						<li><a rel="nofollow" href="{{ path('admin_scategorie_index') }}">SCategorie</a></li>
 						<li><a rel="nofollow" href="{{ path('admin_utilisateur_index') }}">Users</a></li>
 					    {#<li><a rel="nofollow" href="{{ path('admin_image') }}">Images</a></li>
 					    <li><a rel="nofollow" href="{{ path('admin_abonnee') }}">Abonnés</a></li>#}

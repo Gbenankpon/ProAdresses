@@ -6,28 +6,28 @@
             {{ form_errors(form.prenom) }}
 			<span class="block input-icon input-icon-right">
                 {{ form_widget(form.prenom, {'attr': {'placeholder':'Prénom'}}) }}
-				<i class="glyphicon glyphicon-user form-control-feedback"></i>
+				{#<i class="glyphicon glyphicon-user form-control-feedback"></i>#}
 			</span>
 		</label>
 	    <label class="block clearfix">
             {{ form_errors(form.nom) }}
 			<span class="block input-icon input-icon-right">
                 {{ form_widget(form.nom, {'attr': {'placeholder':'Nom'}}) }}
-		        <i class="glyphicon glyphicon-user form-control-feedback"></i>
+		        {#<i class="glyphicon glyphicon-user form-control-feedback"></i>#}
 		    </span>
 		</label>
 		<label class="block clearfix">
             {{ form_errors(form.username) }}
 			<span class="block input-icon input-icon-right">
                 {{ form_widget(form.username, {'attr': {'placeholder':'Pseudo'}}) }}
-			    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+			    {#<span class="glyphicon glyphicon-user form-control-feedback pull-right"></span>#}
 			</span>
 		</label>
         <label class="block clearfix">
             {{ form_errors(form.email) }}
 			<span class="block input-icon input-icon-right">
                 {{ form_widget(form.email, {'attr': {'placeholder':'Email'}}) }}
-                <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+                {#<i class="glyphicon glyphicon-envelope form-control-feedback"></i>#}
             </span>
 		</label>
         <label class="block clearfix">
@@ -35,28 +35,21 @@
             {{ form_errors(el) }}
 			<span class="block input-icon input-icon-right">
                 <p>{{ form_widget(el) }}
-				<i class="glyphicon {% if loop.first %}glyphicon-lock {% else %}glyphicon-log-out {% endif %}form-control-feedback"></i>
+				{#<i class="glyphicon {% if loop.first %}glyphicon-lock {% else %}glyphicon-log-out {% endif %}form-control-feedback"></i>#}
 				</p>
 			</span>
 		    {% endfor %}
 		</label>
-		{#<label class="block clearfix">
-			<span class="block input-icon input-icon-right">
-				{{ form_rest(form) }}
-				<input type="password"  id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required="required" class="form-control" />
-				<i class="glyphicon glyphicon-log-out form-control-feedback"></i>
-			</span>
-		</label>#}
-                                            {% if csrf_token is defined %}<input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" class=" form-control" value="{{ csrf_token }}" />{% endif %}
-			                                <div class="space-12"></div>
-                                            <div class="clearfix">
-			                                    <button type="submit" class="pull-right btn btn-sm btn-primary">
-				                                    <span class="bigger-110">{{ 'registration.submit'|trans }}</span>
-				                                </button>
-			                                </div>
-			   <div class="space-12"></div>
-			   <div class="toolbar">
-				   <a href="{{ path('fos_user_security_login') }}" class="width-100 btn btn-success center" style="color: white">J'ai déjà un compte</a>
-			   </div>
-		                                </fieldset>
+		{% if csrf_token is defined %}<input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" class=" form-control" value="{{ csrf_token }}" />{% endif %}
+			<div class="space-12"></div>
+            <div class="clearfix">
+		        <button type="submit" class="pull-right btn btn-sm btn-primary">
+				    <span class="bigger-110">{{ 'registration.submit'|trans }}</span>
+			    </button>
+			</div>
+			<div class="space-12"></div>
+			<div class="toolbar">
+				<a href="{{ path('fos_user_security_login') }}" class="width-100 btn btn-success center" style="color: white">J'ai déjà un compte</a>
+			</div>
+	</fieldset>
 {{ form_end(form) }}

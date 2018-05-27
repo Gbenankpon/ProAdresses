@@ -5,12 +5,12 @@ namespace ProAddress\AnnonceBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
-use ProAddress\AppBundle\Entity\Pays;
-use ProAddress\AnnonceBundle\Entity\ACategorie;
+//use ProAddress\AppBundle\Entity\Pays;
+//use ProAddress\AnnonceBundle\Entity\ACategorie;
 use ProAddress\AnnonceBundle\Entity\Annonce;
-use ProAddress\AnnonceBundle\Form\AnnonceType;
+//use ProAddress\AnnonceBundle\Form\AnnonceType;
 
 class IndexController extends Controller
 {

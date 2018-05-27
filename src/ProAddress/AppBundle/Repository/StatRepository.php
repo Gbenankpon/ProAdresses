@@ -37,6 +37,9 @@ class StatRepository extends \Doctrine\ORM\EntityRepository
         return $this->entity;
     }
 
+    /**
+     * @return float
+     */
     public function visiteMoy(){
         $moy = (float)$this->_em->createQuery('SELECT AVG(v.visite) FROM ProAddressBundle:Stat v')
             ->getResult();

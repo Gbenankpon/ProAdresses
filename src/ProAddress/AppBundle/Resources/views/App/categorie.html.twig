@@ -1,11 +1,8 @@
 	
-				<div id="navbord" iid="nav-str" class="col-lg-12 text-center">
+				<div id="navbord" class="col-lg-12 text-center">
 					{% if structurescat is defined and structurescat is not empty %}
 					{% for cat in structurescat %}
 					<a class="fa-xs" href="{{ path('pa_app_structure', {'cat': cat.nom}) }}">{{ cat.nom|upper }}</a>
 					{% endfor %}
 					{% endif %}
-					{#<a href="{{ path('pa_app_structure', {'type': 'Universite'}) }}">UNIVERSITES</a>
-					<a href="Eglises">EGLISES</a>
-					<a href="Msques">MOSQUES</a> #}
 				</div>

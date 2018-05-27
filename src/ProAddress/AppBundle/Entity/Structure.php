@@ -136,30 +136,6 @@ class Structure
     }
 
     /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Structure
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
      * Set enseigne
      *
      * @param string $enseigne

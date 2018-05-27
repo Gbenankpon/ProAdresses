@@ -14,7 +14,9 @@ class StructureRepository extends \Doctrine\ORM\EntityRepository
 {
     private $i = 0;
     private $entitiesAr = array();
+
     public function formSearcher($searched){
+
         foreach($this->findByOnline(true) as $entity){
             if(preg_match("#$searched#i", $entity->getEnseigne()) || preg_match("#$searched#i", $entity->getAdresse())){
                 $this->entitiesAr[$this->i] = $entity;

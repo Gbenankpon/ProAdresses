@@ -16,15 +16,8 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Avanzu\AdminThemeBundle\AvanzuAdminThemeBundle(),
             new ProAddress\AppBundle\ProAddressAppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            // Sonata adminBundle
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\CoreBundle\SonataCoreBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle(),// End Sonata,
             new ProAddress\UserBundle\ProAddressUserBundle(),
             new ProAddress\ServiceBundle\ProAddressServiceBundle(),
             new ProAddress\AnnonceBundle\ProAddressAnnonceBundle(),
@@ -34,6 +27,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            //$bundles[] = new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle();
 
             if ('dev' === $this->getEnvironment()) {
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

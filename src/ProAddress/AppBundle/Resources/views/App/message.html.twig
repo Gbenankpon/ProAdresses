@@ -1,22 +1,28 @@
 {% extends "ProAddressAppBundle::layout.html.twig" %}
 
 {% block title %}
-    {{ parent()~' | Contact' }}
+    {{ 'Contact | '~parent() }}
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="col-md-8 well">
+        <div class="col-md-8">
+            <div class="">
+                <h2>Avis</h2>
+                <p>
+                    Vous pouvez nous envoyer un message en remplissant le formulaire de contact. Remplissez tous les champs et cliquez sur le bouton « Envoyer ». Nous lirons votre message attentivement.
+                </p>
+            </div>
             <div class="panel panel-default text-info">
                 <div class="panel-heading">
-                    <div class="panel-title text-info text-center "><h3>ECRIVEZ-NOUS</h3></div>
+                    <div class="panel-title text-info text-center "><h3>Formulaire de contact</h3></div>
                 </div>
                 {{ form_start(messageform) }}
                     <div class="panel-body">
                         <table class="col-md-10 table table-striped">
                             <tr><td><span class="pull-right">{{ form_label(messageform.prenom, 'Votre Prenom : ') }}</span></td><td>{{ form_widget(messageform.prenom) }}</td></tr>
                             <tr><td><span class="pull-right">{{ form_label(messageform.nom, 'Votre nom : ') }}</span></td><td>{{ form_widget(messageform.nom) }}</td></tr>
-                            <tr><td><span class="pull-right">{{ form_label(messageform.courriel, 'Votre adresse de messagerie : ') }}</span></td><td>{{ form_widget(messageform.courriel) }}</td></tr>
+                            <tr><td><span class="pull-right">{{ form_label(messageform.courriel, 'Votre adresse e-mail : ') }}</span></td><td>{{ form_widget(messageform.courriel) }}</td></tr>
                             <tr><td><span class="pull-right">{{ form_label(messageform.message, 'Votre message : ') }}</span></td><td>{{ form_widget(messageform.message) }}</td></tr>
                             {{ form_rest(messageform) }}
                         </table>

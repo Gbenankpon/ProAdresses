@@ -5,19 +5,20 @@ namespace ProAddress\AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Response;
 
 use ProAddress\AppBundle\Entity\Structure;
-use ProAddress\AppBundle\Form\StructureType;
+//use ProAddress\AppBundle\Form\StructureType;
 use ProAddress\AppBundle\Entity\Pays;
 use ProAddress\AppBundle\Entity\Categorie;
 use ProAddress\ServiceBundle\Entity\SCategorie;
 use ProAddress\AnnonceBundle\Entity\ACategorie;
-use ProAddress\AnnonceBundle\Entity\Annonce;
+//use ProAddress\AnnonceBundle\Entity\Annonce;
 use ProAddress\AppBundle\Entity\Message;
-use ProAddress\AppBundle\Form\MessageType;
+//use ProAddress\AppBundle\Form\MessageType;
 use ProAddress\AppBundle\Entity\Stat;
+use ProAddress\UserBundle\Entity\Utilisateur;
 
 
 class AppController extends Controller
@@ -101,6 +102,25 @@ class AppController extends Controller
             $em->flush();
         }// end register
 
+    	// Création de l'user superAdmin s'il n'est créé
+				$em = $this->getDoctrine()->getManager();
+				$ent = $em->getRepository("ProAddressUserBundle:Utilisateur")->findOneByUsername('superAdmin');
+				if($ent === null){
+    				$um = $this->get('fos_user.user_manager');
+				    //$user = $um->createUser();
+				    $user = new Utilisateur();
+				    $user = $um->createUser()
+				         ->setNom('superAdmin')
+				         ->setPrenom('superAdmin')
+				    	 ->setUsername('superAdmin')
+				         ->setEmail('ProAddress@magmatel.com')
+				         ->setPlainPassword('PAuser25superadmin')
+				         ->setSuperAdmin(true)
+				         ->setEnabled(true);
+				         
+				    $em->persist($user);
+				    $em->flush();
+				}
         // Bord nav i.e links of structures categories
         $servicescat = $em->getRepository('ProAddressServiceBundle:SCategorie')->findBy(array(),array('nom'=>'asc'),null,null);
         // .Bord
@@ -166,7 +186,7 @@ class AppController extends Controller
     }
 
     public function getCategorieAction(){
-        $structurescat = $this->getDoctrine()->getManager()->getRepository('ProAddressAppBundle:Categorie')->findAll();
+        $structurescat = $this->getDoctrine()->getManager()->getRepository('ProAddressAppBundle:Categorie')->findBy(array(), array('nom'=>'asc'));
 
         return $this->render('ProAddressAppBundle:App:categorie.html.twig', array('structurescat'=>$structurescat));
     }
@@ -248,7 +268,7 @@ class AppController extends Controller
         $visitetotale = $stat->getVisiteTotale();
         $visitemoy = $stat->getVisiteMoy();
 
-        return new $this->render('ProAddressAppBundle:Admin:stat.html.twig',
+        return $this->render('ProAddressAppBundle:Admin:stat.html.twig',
             array(
                 'visitetotale' => $visitetotale,
                 'visitejour' => $visitejour,

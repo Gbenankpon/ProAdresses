@@ -5,7 +5,8 @@ namespace ProAddress\AppBundle\Controller;
 use ProAddress\AppBundle\Entity\Pays;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Pay controller.
@@ -39,7 +40,7 @@ class PaysController extends Controller
      */
     public function newAction(Request $request)
     {
-        $pay = new Pay();
+        $pay = new Pays();
         $form = $this->createForm('ProAddress\AppBundle\Form\PaysType', $pay);
         $form->handleRequest($request);
 
