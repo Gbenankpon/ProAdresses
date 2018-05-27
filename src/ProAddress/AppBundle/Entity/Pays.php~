@@ -14,19 +14,22 @@ use Doctrine\ORM\Mapping as ORM;
 class Pays
 {
     /**
-     * @ORM\OneToMany(targetEntity="ProAddress\AppBundle\Entity\Structure", mappedBy="pays")
+     * @ORM\OneToMany(targetEntity="ProAddress\AppBundle\Entity\Structure", mappedBy="pays", cascade={"remove"})
+     * @ORM\JoinColumn(name="structure_id", referencedColumnName="id")
      */
     private $structures;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProAddress\ServiceBundle\Entity\Service", mappedBy="pays")
+     * @ORM\OneToMany(targetEntity="ProAddress\ServiceBundle\Entity\Service", mappedBy="pays", cascade={"remove"})
+     * @ORM\JoinColumn(name="service_id", referencedColumnName="id")
      */
     private $services;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProAddress\RecrutementBundle\Entity\Recrutement", mappedBy="pays")
+     * @ORM\OneToMany(targetEntity="ProAddress\AnnonceBundle\Entity\Annonce", mappedBy="pays", cascade={"remove"})
+     * @ORM\JoinColumn(name="annonce_id", referencedColumnName="id")
      */
-    private $recrutements;
+    private $annonces;
 
     /**
      * @var int
@@ -56,7 +59,7 @@ class Pays
     {
         $this->structures = new ArrayCollection();
         $this->services = new ArrayCollection();
-        $this->recrutements = new ArrayCollection();
+        $this->annonces = new ArrayCollection();
     }
 
     /**
@@ -116,5 +119,108 @@ class Pays
     {
         return $this->code;
     }
-}
 
+    /**
+     * Add structure
+     *
+     * @param \ProAddress\AppBundle\Entity\Structure $structure
+     *
+     * @return Pays
+     */
+    public function addStructure(\ProAddress\AppBundle\Entity\Structure $structure)
+    {
+        $this->structures[] = $structure;
+
+        return $this;
+    }
+
+    /**
+     * Remove structure
+     *
+     * @param \ProAddress\AppBundle\Entity\Structure $structure
+     */
+    public function removeStructure(\ProAddress\AppBundle\Entity\Structure $structure)
+    {
+        $this->structures->removeElement($structure);
+    }
+
+    /**
+     * Get structures
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStructures()
+    {
+        return $this->structures;
+    }
+
+    /**
+     * Add service
+     *
+     * @param \ProAddress\ServiceBundle\Entity\Service $service
+     *
+     * @return Pays
+     */
+    public function addService(\ProAddress\ServiceBundle\Entity\Service $service)
+    {
+        $this->services[] = $service;
+
+        return $this;
+    }
+
+    /**
+     * Remove service
+     *
+     * @param \ProAddress\ServiceBundle\Entity\Service $service
+     */
+    public function removeService(\ProAddress\ServiceBundle\Entity\Service $service)
+    {
+        $this->services->removeElement($service);
+    }
+
+    /**
+     * Get services
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
+
+
+
+    /**
+     * Add annonce
+     *
+     * @param \ProAddress\AnnonceBundle\Entity\Annonce $annonce
+     *
+     * @return Pays
+     */
+    public function addAnnonce(\ProAddress\AnnonceBundle\Entity\Annonce $annonce)
+    {
+        $this->annonces[] = $annonce;
+
+        return $this;
+    }
+
+    /**
+     * Remove annonce
+     *
+     * @param \ProAddress\AnnonceBundle\Entity\Annonce $annonce
+     */
+    public function removeAnnonce(\ProAddress\AnnonceBundle\Entity\Annonce $annonce)
+    {
+        $this->annonces->removeElement($annonce);
+    }
+
+    /**
+     * Get annonces
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnnonces()
+    {
+        return $this->annonces;
+    }
+}

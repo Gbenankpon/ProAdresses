@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c11b10-cf7d-44c9-8b3a-74c747819fdf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Entity/Stat.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Recover/Recover.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/ace-ie.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/ace-part2.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/ace-rtl.min.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/.gitkeep" afterPath="$PROJECT_DIR$/var/cache/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/.gitkeep" afterPath="$PROJECT_DIR$/var/logs/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/.gitkeep" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Controller/IndexController.php" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Entity/Annonce.php" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Entity/Annonce.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/acategorie.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AnnonceBundle/Resources/views/acategorie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AppController.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AppController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/PaysController.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/PaysController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Entity/Structure.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Entity/Structure.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Repository/StatRepository.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Repository/StatRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Repository/StructureRepository.php" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Repository/StructureRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/categorie.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/categorie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/message.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/message.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/pays.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/App/pays.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/content.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/index.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/Content/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/userbar.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/AppBundle/Resources/views/userbar.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Entity/SCategorie.php" afterPath="$PROJECT_DIR$/src/ProAddress/ServiceBundle/Entity/SCategorie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/UserBundle/Form/UtilisateurType.php" afterPath="$PROJECT_DIR$/src/ProAddress/UserBundle/Form/UtilisateurType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/Registration/register.form.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/Registration/register.form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/Security/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/css.css" afterPath="$PROJECT_DIR$/web/assets/css/css.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,7 +22,7 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="480">
               <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
               <folding />
             </state>
@@ -67,7 +32,7 @@
       <file leaf-file-name="AppController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AppController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1095">
+            <state relative-caret-position="60">
               <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding>
                 <element signature="e#51#108#0#PHP" expanded="true" />
@@ -79,7 +44,7 @@
       <file leaf-file-name="Utilisateur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProAddress/UserBundle/Entity/Utilisateur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="480">
               <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
               <folding />
             </state>
@@ -300,7 +265,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -427,7 +392,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -562,7 +527,8 @@
       <workItem from="1527237049190" duration="6777000" />
       <workItem from="1527277591871" duration="2796000" />
       <workItem from="1527326430455" duration="11740000" />
-      <workItem from="1527395476941" duration="2264000" />
+      <workItem from="1527395476941" duration="2988000" />
+      <workItem from="1527416536522" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="Commit du 01:10 Lundi, 21-05-2018">
       <created>1526861530496</created>
@@ -592,15 +558,22 @@
       <option name="project" value="LOCAL" />
       <updated>1527123195270</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commit du 00:28 Jeudi, 24-05-2018">
+      <created>1527401739253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1527401739253</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321836000" />
+    <option name="totallyTimeSpent" value="322605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18203124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -750,6 +723,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-855">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="75" column="6" lean-forward="false" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="104" column="54" lean-forward="true" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,13 +950,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="59" lean-forward="false" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProAddress/UserBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="480">
           <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
           <folding />
         </state>
@@ -994,7 +963,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProAddress/AppBundle/Controller/AppController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1095">
+        <state relative-caret-position="60">
           <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
           <folding>
             <element signature="e#51#108#0#PHP" expanded="true" />
@@ -1004,7 +973,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProAddress/UserBundle/Entity/Utilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="480">
           <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
           <folding />
         </state>

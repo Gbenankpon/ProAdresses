@@ -15,7 +15,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Categorie
 {
     /**
-     * @ORM\OneToMany(targetEntity="ProAddress\AppBundle\Entity\Structure", mappedBy="categorie")
+     * @ORM\OneToMany(targetEntity="ProAddress\AppBundle\Entity\Structure", mappedBy="categorie", cascade={"remove"})
+     * @ORM\JoinColumn(name="structure_id", referencedColumnName="id")
      */
     private $structures;
 
@@ -73,5 +74,38 @@ class Categorie
     {
         return $this->nom;
     }
-}
 
+    /**
+     * Add structure
+     *
+     * @param \ProAddress\AppBundle\Entity\Structure $structure
+     *
+     * @return Categorie
+     */
+    public function addStructure(\ProAddress\AppBundle\Entity\Structure $structure)
+    {
+        $this->structures[] = $structure;
+
+        return $this;
+    }
+
+    /**
+     * Remove structure
+     *
+     * @param \ProAddress\AppBundle\Entity\Structure $structure
+     */
+    public function removeStructure(\ProAddress\AppBundle\Entity\Structure $structure)
+    {
+        $this->structures->removeElement($structure);
+    }
+
+    /**
+     * Get structures
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStructures()
+    {
+        return $this->structures;
+    }
+}

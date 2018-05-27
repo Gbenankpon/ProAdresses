@@ -14,10 +14,6 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class SCategorie
 {
-    /**
-     * @ORM\ManyToMany(targetEntity="ProAddress\ServiceBundle\Entity\Service", mappedBy="scategories", cascade={"remove"})
-     */
-    private $services;
 
     /**
      * @var int
@@ -107,5 +103,19 @@ class SCategorie
     public function getServices()
     {
         return $this->services;
+    }
+
+    /**
+     * Set services
+     *
+     * @param \ProAddress\ServiceBundle\Entity\Service $services
+     *
+     * @return SCategorie
+     */
+    public function setServices(\ProAddress\ServiceBundle\Entity\Service $services = null)
+    {
+        $this->services = $services;
+
+        return $this;
     }
 }

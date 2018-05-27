@@ -14,14 +14,12 @@ class Structure
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Pays", inversedBy="structures")
-     * @ORM\JoinColumn(name="pays_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Pays", inversedBy="structures", cascade={"persist"})
      */
     private $pays;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Categorie", inversedBy="structures")
-     * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="ProAddress\AppBundle\Entity\Categorie", inversedBy="structures", cascade={"persist"})
      */
     private $categorie;
 
@@ -40,13 +38,6 @@ class Structure
      * @ORM\Column(name="date", type="datetime", nullable=true)
      */
     private $date;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=255)
-     */
-    private $type;
 
     /**
      * @var string
@@ -382,5 +373,29 @@ class Structure
     public function getOnline()
     {
         return $this->online;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \ProAddress\AppBundle\Entity\Categorie $categorie
+     *
+     * @return Structure
+     */
+    public function setCategorie(\ProAddress\AppBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \ProAddress\AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }
