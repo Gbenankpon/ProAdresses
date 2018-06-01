@@ -1,3 +1,7 @@
+pro_address_app_image:
+    resource: "@ProAddressAppBundle/Controller/ImageController.php"
+    type:     annotation
+
 pro_address_user_utilisateur:
     resource: "@ProAddressUserBundle/Controller/UtilisateurController.php"
     type:     annotation

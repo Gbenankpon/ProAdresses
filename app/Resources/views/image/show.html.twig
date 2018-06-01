@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Image</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ image.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ image.nom }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ image.url }}</td>
+            </tr>
+            <tr>
+                <th>Legende</th>
+                <td>{{ image.legende }}</td>
+            </tr>
+            <tr>
+                <th>Legendetitre</th>
+                <td>{{ image.legendetitre }}</td>
+            </tr>
+            <tr>
+                <th>Legendeslogan</th>
+                <td>{{ image.legendeslogan }}</td>
+            </tr>
+            <tr>
+                <th>Legendedescription</th>
+                <td>{{ image.legendedescription }}</td>
+            </tr>
+            <tr>
+                <th>Legendeadresse</th>
+                <td>{{ image.legendeadresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_image_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_image_edit', { 'id': image.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

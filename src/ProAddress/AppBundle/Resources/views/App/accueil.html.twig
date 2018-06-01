@@ -11,7 +11,7 @@ Services et contacts, annonces recrutements, structures et addresses en ligne : 
 {% block after_header %}
 	<div class="jumbotron navbar-inverse">
 		<div class="container">
-			<div id="navbord" iid="nav-str" class="col-lg-12 text-center">
+			<div id="navbord" class="col-lg-12 text-center">
 				{{ render(controller('ProAddressAppBundle:App:getCategorie')) }}
 			</div>
 			{{ render(controller('ProAddressServiceBundle:Index:getSCategorie')) }}
@@ -44,15 +44,16 @@ Services et contacts, annonces recrutements, structures et addresses en ligne : 
 					{% for line in imgslide %}
 						<div {{ loop.first? 'class="item active"': 'class="item"' }}>
 							<div class="slide-fg">
-								<h1>{{ line.image.legendetitre }}</h1>
-								<h4>{{ line.image.legendeslogan }}</h4>
-								<h5 class="col-xs-12">{{ line.image.legendedescription }}</h5>
-								<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ line.image.legendeaddresse }}</address>
+								<h1>{{ line.legendetitre }}</h1>
+								<h4>{{ line.legendeslogan }}</h4>
+								<h5 class="col-xs-12">{{ line.legendedescription }}</h5>
+								<address class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{ line.legendeadresse }}</address>
 							</div>
-							<img alt="img{{ loop.index0 }}" src="{{ asset('assets/images/') }}{{ line.image.url }}"  width="100%" height="100%">
-							<h1 class="carousel-caption">{{ line.image.legende }}</h1>
+							<img alt="img{{ loop.index0 }}" src="{{ asset('assets/images/') }}{{ line.url }}"  width="100%" height="100%">
+							<h1 class="carousel-caption">{{ line.legende }}</h1>
 						</div>
 					{% endfor %}
+					</div>
 
 					{% else %}
 						<ol class="carousel-indicators">

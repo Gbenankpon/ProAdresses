@@ -18,6 +18,7 @@ use ProAddress\AnnonceBundle\Entity\ACategorie;
 use ProAddress\AppBundle\Entity\Message;
 //use ProAddress\AppBundle\Form\MessageType;
 use ProAddress\AppBundle\Entity\Stat;
+//use ProAddress\AppBundle\Entity\Image;
 use ProAddress\UserBundle\Entity\Utilisateur;
 
 
@@ -113,8 +114,8 @@ class AppController extends Controller
 				         ->setNom('superAdmin')
 				         ->setPrenom('superAdmin')
 				    	 ->setUsername('superAdmin')
-				         ->setEmail('ProAddress@magmatel.com')
-				         ->setPlainPassword('PAuser25superadmin')
+				         ->setEmail('arthuragossou@proaddress.com')
+				         ->setPlainPassword('PA25superadminUSER')
 				         ->setSuperAdmin(true)
 				         ->setEnabled(true);
 				         
@@ -126,6 +127,7 @@ class AppController extends Controller
         // .Bord
 
         // content
+        $imgslide = $this->getDoctrine()->getManager()->getRepository('ProAddressAppBundle:Image')->findByType('slide');
         $structure = new Structure();
         $structureform = $this->createForm('ProAddress\AppBundle\Form\StructureType', $structure);
 
@@ -144,7 +146,8 @@ class AppController extends Controller
 
         return $this->render('ProAddressAppBundle:App:accueil.html.twig', array(
             'structureform' => $structureform->createView(),
-            'servicescat' => $servicescat
+            'servicescat' => $servicescat,
+            'imgslide'=>$imgslide
         ));
 
     }
@@ -294,5 +297,16 @@ class AppController extends Controller
                 'lengthAr' => $length
             )
         );
+    }
+
+    public function getImageAction(){
+
+        $imgpub = $this->getDoctrine()->getManager()->getRepository('ProAddressAppBundle:Image')->findByNom('pub');
+        $images = $this->getDoctrine()->getManager()->getRepository('ProAddressAppBundle:Image')->findAll();
+
+        return $this->render('ProAddressAppBundle:App:image.html.twig', array(
+            'image'=>$images,
+            'pub'=>$imgpub
+        ));
     }
 }

@@ -1,0 +1,365 @@
+<?php
+
+namespace ProAddress\AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+/**
+ * Image
+ *
+ * @ORM\Table(name="image")
+ * @ORM\Entity(repositoryClass="ProAddress\AppBundle\Repository\ImageRepository")
+ * @ORM\HasLifecycleCallbacks
+ */
+class Image
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     *
+     * @Assert\NotBlank
+     * @Assert\Image
+     */
+    private $file;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=25)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legende", type="string", nullable=true)
+     */
+    private $legende;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legendetitre", type="string", nullable=true)
+     */
+    private $legendetitre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legendeslogan", type="string", nullable=true)
+     */
+    private $legendeslogan;
+
+    private $tempFilename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legendedescription", type="text", nullable=true)
+     */
+    private $legendedescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legendeadresse", type="string", length=255, nullable=true)
+     */
+    private $legendeadresse;
+
+    public function getImageDir(){
+        return 'images/';
+    }
+
+    public function getUploadRootDir(){
+        return __DIR__.'/../../../../web/assets/'.$this->getImageDir();
+    }
+
+    public function getImagePath(){
+        return $this->getImageDir().$this->getUrl();
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload(){
+        $this->url = $this->getNom().'.'.$this->file->guessExtension();
+        $this->setUrl($this->url);
+        $this->filename = $this->file->getClientOriginalName();
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upLoad(){
+        if (null !== $this->tempFilename) {
+            $oldFile = $this->getUploadRootDir().$this->tempFilename;
+            if (file_exists($oldFile)) {
+                unlink($oldFile);
+            }
+        }
+        $this->file->move($this->getUploadRootDir(), $this->getNom());
+    }
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function preRemoveUpload(){
+        // On sauvegarde temporairement le nom du fichier, car il dépend de l'id
+        $this->tempFilename = $this->getUploadRootDir().$this->url;
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        // En PostRemove, on n'a pas accès à l'id, on utilise notre nom sauvegardé
+        if (file_exists($this->tempFilename)) {
+            // On supprime le fichier
+            unlink($this->tempFilename);
+        }
+    }
+
+    public function getFile(){
+        return $this->file;
+    }
+
+    public function setFile(UploadedFile $file){
+        $this->file = $file;
+        if (null !== $this->url) {
+            // On sauvegarde l'extension du fichier pour le supprimer plus tard
+            $this->tempFilename = $this->url;
+            // On réinitialise les valeurs l'attribut url
+            $this->url = null;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Image
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Image
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set legende
+     *
+     * @param string $legende
+     *
+     * @return Image
+     */
+    public function setLegende($legende)
+    {
+        $this->legende = $legende;
+
+        return $this;
+    }
+
+    /**
+     * Get legende
+     *
+     * @return string
+     */
+    public function getLegende()
+    {
+        return $this->legende;
+    }
+
+    /**
+     * Set legendetitre
+     *
+     * @param string $legendetitre
+     *
+     * @return Image
+     */
+    public function setLegendetitre($legendetitre)
+    {
+        $this->legendetitre = $legendetitre;
+
+        return $this;
+    }
+
+    /**
+     * Get legendetitre
+     *
+     * @return string
+     */
+    public function getLegendetitre()
+    {
+        return $this->legendetitre;
+    }
+
+    /**
+     * Set legendeslogan
+     *
+     * @param string $legendeslogan
+     *
+     * @return Image
+     */
+    public function setLegendeslogan($legendeslogan)
+    {
+        $this->legendeslogan = $legendeslogan;
+
+        return $this;
+    }
+
+    /**
+     * Get legendeslogan
+     *
+     * @return string
+     */
+    public function getLegendeslogan()
+    {
+        return $this->legendeslogan;
+    }
+
+    /**
+     * Set legendedescription
+     *
+     * @param string $legendedescription
+     *
+     * @return Image
+     */
+    public function setLegendedescription($legendedescription)
+    {
+        $this->legendedescription = $legendedescription;
+
+        return $this;
+    }
+
+    /**
+     * Get legendedescription
+     *
+     * @return string
+     */
+    public function getLegendedescription()
+    {
+        return $this->legendedescription;
+    }
+
+    /**
+     * Set legendeadresse
+     *
+     * @param string $legendeadresse
+     *
+     * @return Image
+     */
+    public function setLegendeadresse($legendeadresse)
+    {
+        $this->legendeadresse = $legendeadresse;
+
+        return $this;
+    }
+
+    /**
+     * Get legendeadresse
+     *
+     * @return string
+     */
+    public function getLegendeadresse()
+    {
+        return $this->legendeadresse;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Image
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+}
